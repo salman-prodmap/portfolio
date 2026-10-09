@@ -9,7 +9,8 @@
   const kindLabel = { add: 'Added', imp: 'Improved', fix: 'Fixed' };
   const caseUrl = c => `case.html?id=${encodeURIComponent(c.id)}`;
   const tags = list => list && list.length ? `<div class="tags">${list.map(t => `<span>${t}</span>`).join('')}</div>` : '';
-  const eyebrow = (i, label) => `<div class="eyebrow mono">${num(i)} — ${label}</div>`;
+  // Small section labels ("01 — How I work") switched off 2026-10-09: big headings only (the side menu already numbers the sections)
+  const eyebrow = () => '';
 
   /* ---------------- Rail ---------------- */
   function rail() {
@@ -69,35 +70,22 @@
     </section>`;
   };
 
-  /* compact = home page: tags, title, one number, link. Full detail stays on the case pages. */
+  /* Editorial case card (2026-10-09): logo + "Company · Sector", title, a thin row of numbers, link.
+     No pills, no grey box; the featured card is the same layout, wider, with 3 numbers.
+     compact = home page (no summary). */
   function caseCard(c, compact) {
-    if (c.featured) {
-      return `
-      <article class="case feature reveal">
-        <div style="display:flex;flex-direction:column;gap:18px">
-          ${tags(c.tags)}
-          ${compact ? '' : `<span class="meta mono">${c.company} · ${c.year}</span>`}
-          <h3>${c.title}</h3>
-          ${!compact && c.summary ? `<p>${c.summary}</p>` : ''}
-          <a href="${caseUrl(c)}" class="more stretch" style="margin-top:auto">Read the case study</a>
-        </div>
-        <div class="chart">
-          <span class="mono">Impact</span>
-          ${c.metric ? `<div class="metric"><b>${c.metric[0]}</b><span>${c.metric[1]}</span></div>` : ''}
-          ${c.results && c.results.length > 1 ? `
-          <ul class="feature-results">
-            ${c.results.filter(r => !c.metric || r[0] !== c.metric[0]).slice(0, 2).map(([v, l]) => `<li><b>${v}</b><span>${l}</span></li>`).join('')}
-          </ul>` : ''}
-        </div>
-      </article>`;
-    }
+    const nums = c.featured
+      ? [c.metric, ...(c.results || []).filter(r => !c.metric || r[0] !== c.metric[0])].filter(Boolean).slice(0, 3)
+      : (c.heroStats || (c.metric ? [c.metric] : [])).slice(0, 2);
     return `
-      <article class="case reveal">
-        ${tags(c.tags)}
-        ${compact ? '' : `<span class="meta mono">${c.company} · ${c.year}</span>`}
-        <h3>${c.title}</h3>
+      <article class="case${c.featured ? ' feature' : ''} reveal">
+        <div class="case-co">
+          ${c.logo ? `<img src="${encodeURI(c.logo)}" alt="">` : ''}
+          <span>${[c.cardCompany || c.company, (c.tags || [])[0]].filter(Boolean).join(' · ')}</span>
+        </div>
+        <h3>${c.cardTitle || c.title}</h3>
         ${!compact && c.summary ? `<p>${c.summary}</p>` : ''}
-        ${c.metric ? `<div class="metric"><b>${c.metric[0]}</b><span>${c.metric[1]}</span></div>` : ''}
+        ${nums.length ? `<div class="case-nums">${nums.map(([v, l]) => `<div><b>${v}</b><span>${l}</span></div>`).join('')}</div>` : ''}
         <a href="${caseUrl(c)}" class="more stretch">Read the case study</a>
       </article>`;
   }
@@ -122,7 +110,6 @@
     <section class="cs-head">
       <div class="wrap">
         <a class="back" href="index.html#work">← Back to home</a>
-        <div class="eyebrow mono">Shipped</div>
         <h2>All case studies</h2>
         <p class="lede">${S.cases.length} products and platforms, from my first build to global launches. Open any one for the full story.</p>
         <div class="cases">${S.cases.map(c => caseCard(c, false)).join('')}</div>
@@ -136,7 +123,7 @@
       : `<span class="co-logo co-initials" aria-hidden="true">${e.initials || e.company.slice(0, 2)}</span>`;
     const links = (e.cases || []).map(id => S.cases.find(c => c.id === id)).filter(Boolean);
     return `
-      <div class="entry ${e.current ? 'current' : ''}">
+      <div class="entry ${e.current ? 'current' : ''}" id="v${e.ver.replace('.', '-')}">
         <div class="ver"><b>${e.ver}</b><span>${e.dates}</span>${e.contract ? '<span class="contract">Contract</span>' : ''}</div>
         <div class="entry-body">
           <div class="entry-head">${logo}<div><h3>${e.role}</h3><span class="co">${e.company}</span></div></div>
@@ -276,6 +263,13 @@
       <span class="tool-name">${name}</span>
     </div>`;
 
+  // Small round badge next to a certification name; a neutral tick when there is no badge yet (e.g. ISTQB)
+  const certIcon = b => `<span class="cert-ico">${!b
+    ? icon('shield')
+    : b.img
+      ? `<img src="${encodeURI(b.img)}" alt="">`
+      : `<span class="badge-ico" style="--ico:url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/${b.icon}.svg');--c:${b.color || 'var(--ink)'}"></span>`}</span>`;
+
   function specsPage() {
     const sp = S.specs;
     document.title = `Specs — ${S.person.name}`;
@@ -337,14 +331,9 @@
     <section class="sp-sec">
       <div class="wrap">
         <h2 class="sp-h">Certifications</h2>
-        <div class="badge-row">
-          ${sp.badges.map(b => `<figure class="badge"><span class="badge-frame">${b.img
-            ? `<img src="${encodeURI(b.img)}" alt="${b.name}">`
-            : `<span class="badge-ico" style="--ico:url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/${b.icon}.svg');--c:${b.color || 'var(--ink)'}" role="img" aria-label="${b.name}"></span>`}</span><figcaption>${b.name}</figcaption></figure>`).join('')}
-        </div>
         <div class="cert-cols">
           ${sp.certifications.map(g => `
-            <div><h3>${g.group}</h3><ul>${g.items.map(x => `<li>${x}</li>`).join('')}</ul></div>`).join('')}
+            <div><h3>${g.group}</h3><ul>${g.items.map(x => `<li>${certIcon(sp.badges.find(b => b.name === x))}<span>${x}</span></li>`).join('')}</ul></div>`).join('')}
         </div>
       </div>
     </section>
@@ -361,6 +350,32 @@
     </section>`;
   }
 
+  // One review card: short line (their own words), name, button. The full text sits hidden in the card
+  // and is shown in the grid's shared panel, placed right under the row of the card that was opened.
+  // Where a recommendation leads: r.exp = a case study id ('reward-gmm') or a Career version ('3.1').
+  // Returns {href, logo, initials, label} using the logo already stored on that case study / Career entry.
+  const revExp = r => {
+    if (!r.exp) return null;
+    const c = S.cases.find(x => x.id === r.exp);
+    if (c) return { href: caseUrl(c), logo: c.logo, label: `${c.cardCompany || c.company}: case study` };
+    const e = (S.changelog || []).find(x => x.ver === r.exp);
+    if (e) return { href: `index.html#v${e.ver.replace('.', '-')}`, logo: e.logo, initials: e.initials, label: `${e.company}: ${e.role}` };
+    return null;
+  };
+  const revCard = r => {
+    const x = revExp(r);
+    // logo shown under the name; the whole open panel links to the experience (stretched link)
+    const expLink = x ? `<span class="rev-exp">${x.logo
+      ? `<img src="${encodeURI(x.logo)}" alt="">` : `<span class="co-initials">${x.initials || ''}</span>`}</span><a class="rev-panel-link" href="${x.href}" aria-label="${x.label}"></a>` : '';
+    return `
+    <figure class="review reveal">
+      <blockquote class="pull">“${r.pull || r.text[0]}”</blockquote>
+      ${who(r)}
+      <button type="button" class="rev-open" aria-expanded="false"><span class="lbl-more">Read full recommendation</span><span class="lbl-less">Hide full recommendation</span></button>
+      <div class="rev-src" hidden><div class="rev-panel-who">${who(r)}${expLink}</div><div class="rev-panel-text">${r.text.map(p => `<p>${p}</p>`).join('')}</div></div>
+    </figure>`;
+  };
+
   R.reviews = (s, i) => {
     const rv = S.reviews;
     const total = rv.featured.length + rv.more.length;
@@ -370,27 +385,11 @@
         ${eyebrow(i, s.label)}
         <h2>${rv.heading}</h2>
         ${rv.sub ? `<p class="lede">${rv.sub}</p>` : ''}
-        <div class="reviews">
-          ${rv.featured.map(r => `
-            <figure class="review reveal">
-              <blockquote class="pull">“${r.pull}”</blockquote>
-              ${who(r)}
-              <details class="rev-full"><summary><span class="lbl-more">Read full recommendation</span><span class="lbl-less">Hide full recommendation</span></summary>
-                ${r.text.map(p => `<p>${p}</p>`).join('')}
-              </details>
-            </figure>`).join('')}
-        </div>
+        <div class="reviews">${rv.featured.map(revCard).join('')}<div class="rev-panel" hidden></div></div>
         <details class="rev-all">
           <summary class="btn btn-ghost"><span class="lbl-more">Show all ${total} recommendations</span><span class="lbl-less">Show fewer</span></summary>
-          <div class="rev-grid">
-            ${rv.more.map(r => `
-              <figure class="rev-card">
-                ${who(r)}
-                <div class="rev-body">${reviewText(r.text)}</div>
-              </figure>`).join('')}
-          </div>
+          <div class="reviews reviews-more">${rv.more.map(revCard).join('')}<div class="rev-panel" hidden></div></div>
         </details>
-        ${rv.linkedin ? `<p class="rev-source">From my LinkedIn recommendations. <a class="inline-link" href="${rv.linkedin}" target="_blank" rel="noopener">View my LinkedIn profile ↗</a></p>` : ''}
       </div>
     </section>`;
   };
@@ -578,6 +577,41 @@
     const open = t.getAttribute('aria-expanded') !== 'true';
     t.setAttribute('aria-expanded', String(open));
     document.getElementById(t.getAttribute('aria-controls')).classList.toggle('is-open', open);
+  });
+
+  /* Links to a Career entry (#v3-1): open "Show earlier versions" if the entry is inside it, then scroll to it */
+  const goToHash = () => {
+    const el = location.hash.length > 1 && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (!el) return;
+    const d = el.closest('details');
+    if (d && !d.open) d.open = true;
+    el.classList.add('flash');
+    setTimeout(() => el.classList.remove('flash'), 1600);
+    requestAnimationFrame(() => el.scrollIntoView({ block: 'center' }));
+  };
+  window.addEventListener('hashchange', goToHash);
+  if (/^#v\d/.test(location.hash)) setTimeout(goToHash, 50);
+
+  /* Featured reviews: full text opens in one panel under the row (other cards keep their size) */
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('.rev-open');
+    if (!btn) return;
+    const grid = btn.closest('.reviews'), card = btn.closest('.review'), panel = grid.querySelector('.rev-panel');
+    const open = btn.getAttribute('aria-expanded') !== 'true';
+    grid.querySelectorAll('.review').forEach(c => {
+      c.classList.remove('is-open');
+      c.querySelector('.rev-open').setAttribute('aria-expanded', 'false');
+    });
+    panel.hidden = true;
+    if (!open) return;
+    card.classList.add('is-open');
+    btn.setAttribute('aria-expanded', 'true');
+    panel.innerHTML = card.querySelector('.rev-src').innerHTML;
+    // put the panel after the last card on the same row
+    const cards = [...grid.querySelectorAll('.review')];
+    const rowEnd = cards.filter(c => c.offsetTop === card.offsetTop).pop();
+    rowEnd.after(panel);
+    panel.hidden = false;
   });
 
   /* Inline "Read more" / "Show less" */
