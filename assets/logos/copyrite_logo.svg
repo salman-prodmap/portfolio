@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Copyrite (redrawn)</title>
+  <rect width="200" height="200" fill="#ffffff"/>
+  <path d="M58 64 C 78 40, 122 36, 146 56" fill="none" stroke="#2F8FD8" stroke-width="7" stroke-linecap="round"/>
+  <text x="100" y="114" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="40" font-weight="600" fill="#1B3F7A" letter-spacing="-1">copyrite</text>
+  <text x="100" y="140" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#2F8FD8">total office technology</text>
+</svg>
