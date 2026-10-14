@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <title>NIE Networks — symbol without wordmark</title>
+  <defs><linearGradient id="blue" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#243e7b"/><stop offset="1" stop-color="#00afd1"/></linearGradient></defs>
+  <g fill="url(#blue)">
+    <path d="M11 84 34 20q2-5 7-5h3L20 84ZM25 84l24-69h9L34 84ZM39 84l24-69h9L48 84Z"/>
+    <path d="M68 15h25l-7 19H61ZM59 40h25l-7 19H52ZM50 65h25l-5 14q-2 5-7 5H43Z"/>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 174">
+  <title>Mformation â€” vector reconstruction from supplied reference</title>
+  <rect x="8" y="7" width="174" height="160" rx="25" fill="#f99a19"/>
+  <g fill="#fffef5">
+    <path d="M56 54h15v89H56zM118 54h15v89h-15z"/>
+    <circle cx="32" cy="143" r="17"/>
+    <circle cx="94" cy="143" r="17"/>
+    <circle cx="156" cy="143" r="17"/>
+  </g>
+</svg>

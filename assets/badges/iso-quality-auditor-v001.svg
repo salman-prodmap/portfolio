@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+<title id="title">ISO 9001:2008 Internal Quality Auditor</title><desc id="desc">Custom portfolio illustration, not an issuer or ISO certification mark.</desc>
+<circle cx="120" cy="120" r="113" fill="#fff" stroke="#174d42" stroke-width="5"/>
+<circle cx="120" cy="120" r="103" fill="#eaf2ee" stroke="#b8ccbd" stroke-width="1.5"/>
+<path d="M120 32 145 42v22c0 17-12 30-25 36-13-6-25-19-25-36V42Z" fill="#174d42"/>
+<path d="m108 62 9 9 16-18" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<g font-family="Arial,Helvetica,sans-serif" text-anchor="middle" fill="#062251">
+<text x="120" y="128" font-size="32" font-weight="700">ISO 9001</text><text x="120" y="152" font-size="20" font-weight="600">2008</text>
+<text x="120" y="180" font-size="17" font-weight="700">INTERNAL QUALITY</text><text x="120" y="203" font-size="20" font-weight="700">AUDITOR</text>
+</g></svg>

@@ -1,0 +1,10 @@
+.approach-link{margin-top:32px}
+.approach-intro{padding-bottom:32px}
+.approach-intro .section-label{margin-top:40px}
+.approach-intro h1{font-family:var(--display);font-weight:500;font-size:clamp(34px,5vw,64px);line-height:1.12;letter-spacing:-.04em;max-width:20ch}
+body[data-page="approach"] #method{padding-top:32px}
+body[data-page="approach"] .ppp{background:var(--brand)}
+body[data-page="approach"] .ppp-item .mono{color:var(--accent)}
+body[data-page="approach"] .method{border-color:var(--brand)}
+body[data-page="approach"] .ppp-item p{color:#e0e9df}
+body[data-page="approach"] .stage-d{color:var(--ink)}

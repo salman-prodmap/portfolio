@@ -1,3 +1,148 @@
+/* Employment-first presentation. Evidence remains sourced from content/site.js. */
+window.portfolioActionIcon = function(name) {
+  const paths = {
+    home: '<path d="m3 11 9-8 9 8M5 10v11h5v-7h4v7h5V10"/>',
+    back: '<path d="m15 5-7 7 7 7"/>',
+    left: '<path d="M20 12H4m6-6-6 6 6 6"/>',
+    heart: '<path d="M20 5c-3-3-7-1-8 1-1-2-5-4-8-1-4 4 2 10 8 15 6-5 12-11 8-15Z"/>',
+    mail: '<rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3 7 9 6 9-6"/>',
+    download: '<path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/>',
+    right: '<path d="M4 12h16m-6-6 6 6-6 6"/>',
+    down: '<path d="M12 4v16m-6-6 6 6 6-6"/>',
+    linkedin: '<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7m0-10v.01M11 17v-7m0 3c0-4 6-4 6 0v4"/>'
+  };
+  return `<svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${paths[name] || paths.right}</svg>`;
+};
+/* Original portfolio illustrations; no confidential source artwork is embedded. */
+window.portfolioGmmEcosystem = function() {
+ return `<figure class="loyalty-platform-visual"><img src="assets/loyalty-platform-sketch-v001.png" alt="Sketch of a loyalty platform: Customer at the top, Bank and Retailer in the middle, and Loyalty Platform below, connected by arrows."></figure>`;
+};
+window.portfolioGmmVisuals = function() {
+ const icon=window.portfolioActionIcon;
+ const food=`<svg class="gmm-merchant-art" viewBox="0 0 220 110" aria-hidden="true"><rect width="220" height="110" fill="#ede4d8"/><path d="M0 82 220 55v55H0" fill="#e4d5c3"/><ellipse cx="112" cy="59" rx="50" ry="40" fill="#fcfaf5"/><ellipse cx="112" cy="59" rx="34" ry="27" fill="#ead6b1"/><path d="M89 43c17-13 23 3 38 1l9 13-12 16-27-4-12-15Z" fill="#e29365"/><path d="m102 42 6 16 14-13m-25 22 21-7" fill="none" stroke="#598b6a" stroke-width="5" stroke-linecap="round"/><path d="M40 30v50m-5-50v18h10V30m134 0v50m0-50c-13 0-13 24 0 24" stroke="#807b6d" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="185" cy="16" r="28" fill="#b0c8b4" opacity=".7"/></svg>`;
+ const rewards=`<svg class="gmm-rewards-art" viewBox="0 0 110 100" aria-hidden="true"><circle cx="53" cy="48" r="34" fill="#eaf4f0"/><path d="M24 40h50l-6 46H30L24 40Z" fill="#f39f86"/><path d="M37 44V32a12 12 0 0 1 24 0v12" fill="none" stroke="#a85546" stroke-width="4"/><ellipse cx="78" cy="69" rx="14" ry="20" fill="#e5bf68" transform="rotate(24 78 69)"/><path d="m79 53-7 31" stroke="#c49739" stroke-width="2"/><path d="m85 16 2 7 7 2-7 2-2 7-2-7-7-2 7-2Z" fill="#477967"/></svg>`;
+ const status='<div class="gmm-phone-top"><span>9:41</span><span class="gmm-status-icons" aria-hidden="true">▂▄▆ ▰</span></div>';
+ const nav=active=>`<div class="gmm-bottom-nav"><span>${icon('home')}<small>Home</small></span><span class="${active==='offers'?'active':''}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 4 10-1 8 8-10 10-8-8V4Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="8" cy="8" r="1.5" fill="currentColor"/></svg><small>Offers</small></span><span class="${active==='activity'?'active':''}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10m7 10V4m7 16v-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><small>Activity</small></span></div>`;
+ return `<div class="gmm-story-visual gmm-customer-visual"><div class="gmm-visual-heading"><p class="section-label">Customer experience</p><h2>Offers to cashback.</h2></div><div class="gmm-phones">
+ <figure class="gmm-phone-step"><div class="gmm-phone">${status}<div class="gmm-app-header"><h3>Cashback</h3><span class="gmm-info-icon">i</span></div><div class="gmm-wallet-preview"><div><small>You’ve earned</small><strong>£14.20</strong><span>This month</span></div>${rewards}</div><div class="gmm-app-tabs" aria-label="Offers selected"><b>Offers</b><span>Activity</span></div><p class="gmm-phone-label">Picked for you</p><div class="gmm-featured-offer">${food}<div><b>Harbour Kitchen</b><span class="gmm-rate">10% cashback</span><small>Dining · activate before shopping</small></div><span class="gmm-add-offer">+</span></div><div class="gmm-mini-offer"><span class="gmm-mini-brand">S</span><div><b>Sunday Market</b><small>£3 cashback</small></div><span>+</span></div>${nav('offers')}</div><figcaption><b>01 / Discover</b><span>Find an offer</span></figcaption></figure>
+ <span class="gmm-phone-arrow" aria-hidden="true">${icon('right')}</span>
+ <figure class="gmm-phone-step"><div class="gmm-phone">${status}<div class="gmm-detail-toolbar"><span aria-hidden="true">${icon('back')}</span><b>Offer details</b><span aria-hidden="true">${icon('heart')}</span></div><div class="gmm-detail-art">${food}<span class="gmm-image-tag">Dining</span></div><p class="gmm-phone-label">Harbour Kitchen</p><h3 class="gmm-offer-title">10% cashback</h3><p class="gmm-screen-sub">A little back on your next meal.</p><div class="gmm-terms-row"><span>Minimum spend</span><b>£20</b></div><div class="gmm-terms-row"><span>Cashback limit</span><b>£5</b></div><div class="gmm-terms-row"><span>Where to use</span><b>In store</b></div><div class="gmm-demo-button">Activate offer</div><p class="gmm-activation-note">Activate before you pay</p></div><figcaption><b>02 / Activate</b><span>Choose the reward</span></figcaption></figure>
+ <span class="gmm-phone-arrow" aria-hidden="true">${icon('right')}</span>
+ <figure class="gmm-phone-step"><div class="gmm-phone">${status}<div class="gmm-app-header"><h3>Cashback</h3><span class="gmm-info-icon">i</span></div><div class="gmm-wallet-preview gmm-wallet-earned"><div><small>From your latest purchase</small><strong>£3.00</strong><span class="gmm-pending-pill">Pending</span></div>${rewards}</div><div class="gmm-app-tabs" aria-label="Activity selected"><span>Offers</span><b>Activity</b></div><p class="gmm-phone-label">Recent activity</p><div class="gmm-reward-transaction"><span class="gmm-transaction-brand">H</span><div><b>Harbour Kitchen</b><small>Purchase £30.00</small></div><strong>+£3.00</strong></div><div class="gmm-confirmation"><span aria-hidden="true">✓</span><div><b>Cashback earned</b><small>Your purchase has been matched</small></div></div>${nav('activity')}</div><figcaption><b>03 / Track</b><span>Track cashback</span></figcaption></figure>
+ </div><p class="product-illustration-note">Illustrative product views</p></div>`;
+};
+window.portfolioHeader = function(S, page) {
+  const prefix = page === 'home' ? '' : 'index.html';
+  return `<div class="header-inner"><a class="identity" href="${prefix}#top" aria-label="Salman Abdul Ghaffar, home"><span class="identity-name">Salman Abdul Ghaffar</span></a><nav aria-label="Main navigation"><a href="${prefix}#work" ${['case','cases'].includes(page)?'aria-current="page"':''}>Selected work</a><a href="${prefix}#approach">Leadership</a><a href="${prefix}#changelog">Experience</a><a href="specs.html" ${page==='specs'?'aria-current="page"':''}>Capabilities</a></nav><a class="header-contact" href="${prefix}#contact">Contact me ${window.portfolioActionIcon("mail")}</a><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button></div><nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" hidden><a href="${prefix}#work">Selected work</a><a href="${prefix}#approach">Leadership</a><a href="${prefix}#changelog">Experience</a><a href="specs.html">Capabilities</a><a href="${prefix}#contact">Contact</a></nav>`;
+};
+window.portfolioProductPreview = function(kind) {
+ const toolbar=title=>`<div class="preview-toolbar"><span class="preview-window-dots" aria-hidden="true"><i></i><i></i><i></i></span><b>${title}</b><span class="preview-avatar" aria-hidden="true">S</span></div>`;
+ if(kind==='public') return `<div class="product-preview education-preview" role="img" aria-label="Illustrative leave and claims interface showing a request, approval and readiness for payroll">${toolbar('Leave & claims')}<div class="education-workspace"><aside class="preview-sidebar"><b>Workspace</b><span class="selected">Requests</span><span>Claims</span><span>Payroll</span></aside><div class="preview-main"><div class="preview-page-title"><b>Leave requests</b><span class="preview-add">+ New request</span></div><div class="preview-list-row"><span class="preview-person">AM</span><div><b>Alex Morgan</b><small>Annual leave · 3 days</small></div><span class="preview-state">Approved</span></div><div class="preview-list-row secondary"><span class="preview-person">JT</span><div><b>Jamie Taylor</b><small>Leave request · 1 day</small></div><span class="preview-review">In review</span></div><div class="preview-payroll"><span class="preview-check" aria-hidden="true">✓</span><div><b>Ready for payroll</b><small>Approved request · record updated</small></div></div></div></div></div>`;
+ return `<div class="product-preview broker-preview" role="img" aria-label="Illustrative broker journey from application capture through risk review to a quote">${toolbar('Broker workspace')}<div class="broker-journey"><div class="broker-stage"><span class="preview-stage-label">01 / Application</span><b>Start with the details</b><div class="preview-field"><small>Cover</small><span>Equine insurance <i>⌄</i></span></div><div class="preview-field"><small>Applicant</small><span>Harbour Stables</span></div><span class="preview-primary">Continue <span aria-hidden="true">→</span></span></div><div class="broker-stage"><span class="preview-stage-label">02 / Review</span><b>A clear risk picture</b><div class="preview-risk-ring"><svg viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="20" fill="none" stroke="#e5e1f2" stroke-width="5"/><path d="M26 6a20 20 0 1 1-19 26" fill="none" stroke="#8171b1" stroke-width="5" stroke-linecap="round"/></svg><span>✓</span></div><span class="preview-risk-line">Details checked</span><span class="preview-risk-line">Ready for review</span></div><div class="broker-stage"><span class="preview-stage-label">03 / Quote</span><b>Ready for the client</b><span class="preview-quote-icon" aria-hidden="true">${window.portfolioActionIcon('download')}</span><span class="preview-state">Quote prepared</span><span class="preview-primary">View quote <span aria-hidden="true">→</span></span></div></div></div>`;
+};
+window.portfolioProjectEmblem = function(kind) {
+ const emblems = {
+  reward: {className:'reward-emblem',image:'logos/reward-transparent-v001.png',alt:'Reward',category:'Fintech · International',title:'API-based loyalty platform'},
+  public: {className:'education-emblem',image:'logos/irish-harp-transparent-v001.png',alt:'Irish government harp',category:'Education · Ireland',title:'National leave & claims platform'},
+  insurance: {className:'equine-emblem',image:'equine-horse.png',alt:'Horse silhouette',category:'Insurance · United States',title:'Equine & livestock underwriting'}
+ };
+ const emblem=emblems[kind];
+ return `<div class="project-emblem ${emblem.className}"><img src="assets/${emblem.image}" alt="${emblem.alt}"><div><span>${emblem.category}</span><b>${emblem.title}</b></div></div>`;
+};
+window.portfolioCaseProductVisual = function(kind) {
+ const education=kind==='public';
+ return `<figure class="case-product-visual ${education?'education-case-preview':'broker-case-preview'}"><div class="case-preview-heading"><p class="section-label">${education?'Leave & claims':'Broker experience'}</p><h2>${education?'A clearer path from request to payroll.':'From application to quote.'}</h2></div>${window.portfolioProductPreview(kind)}<figcaption>Illustrative product view</figcaption></figure>`;
+};
+window.portfolioSummaryYears = function(dateRange='') {
+ const years=String(dateRange).match(/\b(?:19|20)\d{2}\b/g) || [];
+ return years.length>1 && years[0]!==years[years.length-1] ? `${years[0]}–${years[years.length-1]}` : years[0] || String(dateRange);
+};
+window.portfolioCaseCard = function(c, presentation={}) {
+ const icon=window.portfolioActionIcon;
+ return `<article class="project-card ${presentation.visual?'project-card-illustrated':''}">${presentation.visual?`<div class="project-card-visual ${presentation.type||''}">${presentation.visual}</div>`:''}<div class="project-card-body"><p class="project-card-meta">${[c.company,window.portfolioSummaryYears(c.year)].filter(Boolean).join(' · ')}</p><h3>${presentation.title||c.title}</h3>${presentation.description?`<p class="project-card-description">${presentation.description}</p>`:''}${c.metric?`<div class="project-card-metric"><b>${c.metric[0]}</b><span>${c.metric[1]}</span></div>`:''}<a class="project-card-link" href="case.html?id=${encodeURIComponent(c.id)}" aria-label="Read the case study: ${(presentation.title||c.title).replace(/"/g,'&quot;')}">Read the case study ${icon('right')}</a></div></article>`;
+};
+window.portfolioRecommendations = function(reviews) {
+  const escape = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  const all = [...reviews.featured, ...reviews.more];
+  const selections = [
+    ['Tracy Webb', 'Salman’s active involvement in supporting pre-sales technical and product architecture discussions has been invaluable, showcasing his adeptness in managing a spectrum of business and technical stakeholders.'],
+    ['Declan Ballantyne', 'Salman is a product-minded leader who brings clarity to complex problems, unifies teams into a single delivery unit, and sets a high quality bar.']
+  ];
+  const attribution = r => {
+    const split = r.role.lastIndexOf(',');
+    const location = r.location ? ` · ${escape(r.location)}` : '';
+    const role = split < 0 ? `<strong>${escape(r.role)}</strong>${location ? `<span class="recommendation-company">${escape(r.location)}</span>` : ''}` : `<strong>${escape(r.role.slice(0, split))}</strong><span class="recommendation-company">${escape(r.role.slice(split + 1).trim())}${location}</span>`;
+    return `<span class="recommendation-role">${role}</span>`;
+  };
+  const fullText = r => `${r.context ? `<p class="recommendation-context">${escape(r.context)}</p>` : ''}${r.text.map(p => `<p>${escape(p)}</p>`).join('')}`;
+  const primary = selections.map(([name, excerpt]) => {
+    const r = all.find(item => item.name === name);
+    return `<figure class="recommendation-entry"><figcaption><h3>${escape(r.name)}</h3>${attribution(r)}</figcaption><blockquote><p>“${escape(excerpt)}”</p></blockquote><details class="recommendation-full"><summary aria-label="Toggle full recommendation from ${escape(r.name)}"><span class="recommendation-expand-icon" aria-hidden="true"></span></summary><div>${fullText(r)}</div></details></figure>`;
+  }).join('');
+  const selectedNames = new Set(selections.map(([name]) => name));
+  const remaining = all.filter(r => !selectedNames.has(r.name));
+  return `<section class="recommendation-spotlight" id="reviews"><div class="wrap testimonials-preview-layout"><div class="testimonials-preview-intro"><p class="section-label">03 / In good company</p><h2>Leadership,<em>seen by others.</em></h2><a class="quiet-link" href="${escape(reviews.linkedin)}" target="_blank" rel="noopener">Recommendations on LinkedIn ${window.portfolioActionIcon('linkedin')}</a></div><div class="testimonials-preview-voices" id="featured-recommendations">${primary}</div><details class="recommendations-more testimonials-preview-all"><summary>View all recommendations <span>${remaining.length} more voices</span></summary><div class="recommendations-directory">${remaining.map(r => `<details class="recommendation-directory-entry"><summary><span class="recommendation-person"><b>${escape(r.name)}</b>${attribution(r)}</span></summary><div>${fullText(r)}</div></details>`).join('')}</div></details></div></section>`;
+};
+window.portfolioHome = function(S) {
+  const caseLink=id=>`case.html?id=${encodeURIComponent(id)}`;
+  const email=`mailto:${S.person.email}?subject=Senior%20product%20opportunity`;
+  const icon=window.portfolioActionIcon;
+  const arrow=icon('right');
+  const current=S.changelog[0];
+  const selected=[
+    {id:'reward-gmm',type:'platform',title:'Driving global expansion.',description:'An API-based loyalty platform, from concept to international launch.',visual:window.portfolioProjectEmblem('reward')},
+    {id:'olcs',type:'public',title:'Modernising a national leave & claims platform.',description:'Product ownership across three teams, connecting policy, service and payroll.',visual:window.portfolioProjectEmblem('public')},
+    {id:'liberty-equine',type:'insurance',title:'Digital underwriting for brokers.',description:'Equine and livestock products, from concept to launch.',visual:window.portfolioProjectEmblem('insurance')}
+  ];
+  const experienceBody=e=>{
+    const intro=[],groups=[];
+    let active=null;
+    for(const paragraph of e.more||[]){
+      if(paragraph.startsWith('## ')){
+        const heading=paragraph.slice(3),name=heading.replace(/^(Client|Internal):\s*/, '');
+        active={name,internal:heading.startsWith('Internal:'),paragraphs:[]};
+        groups.push(active);
+      }else (active?active.paragraphs:intro).push(paragraph);
+    }
+    const paragraphs=items=>items.length?`<ul class="experience-evidence">${items.map(p=>`<li${p.startsWith('Role:')?' class="experience-role-statement"':''}>${p}</li>`).join('')}</ul>`:'';
+    return `${paragraphs(intro)}${groups.length?`<div class="experience-engagements">${groups.map(g=>{
+      const meta=(S.experienceEngagements||{})[g.name]||{};
+      const mark=meta.logo?`<img src="${meta.logo}" alt="" width="44" height="44" loading="lazy">`:`<span aria-hidden="true">${meta.initials||g.name.slice(0,2)}</span>`;
+      return `<details class="experience-engagement"><summary><span class="engagement-mark">${mark}</span><span class="engagement-identity"><b>${meta.role||g.name}</b><span>${g.internal?'Deloitte · ':''}${g.name}</span></span><span class="engagement-toggle" aria-hidden="true">+</span></summary><div class="engagement-detail">${paragraphs(g.paragraphs)}</div></details>`;
+    }).join('')}</div>`:''}`;
+  };
+  const experienceRow=(e)=>`<details class="experience-row"><summary><span class="experience-date">${e.dates}${e.current?'<small>Current</small>':''}</span><span class="experience-identity">${e.logo ? `<span class="experience-mark ${e.company==='Malaysian Board of Technology'?'experience-mark-mbot':''}"><img src="${e.company==='Reward' ? 'assets/logos/reward-transparent-v001.png' : e.company.includes('Department of Education') ? 'assets/logos/irish-harp-transparent-v001.png' : e.logo}" alt="" width="56" height="56" loading="lazy"></span>` : `<span class="experience-mark experience-initials" aria-hidden="true">${e.initials||e.company.slice(0,2)}</span>`}<span class="experience-position"><b>${e.role}</b><span>${e.company}</span></span></span><span class="experience-toggle" aria-hidden="true">+</span></summary><div class="experience-detail"><p>${e.highlight}</p>${experienceBody(e)}${(e.cases||[]).map(id=>`<a class="quiet-link" href="case.html?id=${encodeURIComponent(id)}">Read the case study ${arrow}</a>`).join('')}</div></details>`;
+  const careerGroups=[
+    {id:'experience-ai',title:'AI Product Leadership',period:'2024–present',phase:'ai'},
+    {id:'experience-product',title:'Product & Platform Leadership',period:'2016–2024',phase:'3'},
+    {id:'experience-consulting',title:'Consulting Leadership',period:'2012–2016',phase:'2'},
+    {id:'experience-foundations',title:'Engineering & Earlier Experience',period:'2004–2012',phase:'1'}
+  ];
+  const careerSections=careerGroups.map((g,index)=>{
+    const entries=g.phase==='ai' ? S.changelog.slice(0,2) : S.changelog.filter(e=>e.ver.split('.')[0]===g.phase && !S.changelog.slice(0,2).includes(e));
+    const stageEntries=g.phase==='1' ? [...entries,...S.changelog.filter(e=>e.ver.split('.')[0]==='0')] : entries;
+    return `<section class="career-group" id="${g.id}" role="tabpanel" tabindex="0" aria-labelledby="${g.id}-tab" ${index===0?'':'hidden'}><div class="career-group-heading"><span><b>${g.title}</b><small>${g.period}</small></span></div><div class="experience-list">${stageEntries.map(experienceRow).join('')}</div></section>`;
+  }).join('');
+  return `
+  <section class="new-hero" id="top"><div class="wrap hero-layout"><div class="hero-copy"><p class="section-label hero-positioning">Product-led transformation · Responsible AI · Strategy &amp; architecture</p><h1>From complex business problems <em class="hero-heading-secondary">to products that work at scale.</em></h1><p class="hero-intro">I lead product strategy, architecture and delivery—building new platforms and improving established ones with hands-on technical depth.</p><div class="hero-actions"><a class="btn btn-primary" href="#work">Explore my work ${icon("down")}</a><a class="quiet-link" href="${S.person.resume}" download>Download CV ${icon("download")}</a></div></div><figure class="intersection-visual leadership-process-hero"><picture><source media="(max-width:640px)" srcset="assets/approach-process-mobile-v002.png"><img src="assets/approach-process-desktop-v002.png" width="2400" height="1220" alt="Hands-on product leadership: set direction, shape the product, engineer for scale, deliver and evolve, with continuous learning. Responsible AI underpins every stage; human-led."></picture></figure></div><div class="wrap hero-evidence career-evidence">${[...S.intro.kpis.slice(0,2), ['8', 'industries']].map(([value,label])=>`<div><b>${value}</b><p>${label}</p></div>`).join('')}</div></section>
+
+
+
+  <section class="selected-work" id="work"><div class="wrap work-preview-layout"><div class="work-preview-intro"><p class="section-label">01 / Selected work</p><h2>Selected <em>work.</em></h2><p>More of the story: service design, automation and my first product.</p><a class="quiet-link" href="cases.html">All case studies <span aria-hidden="true">→</span></a></div><div class="work-preview-projects"><a class="work-preview-project" href="case-reward-gmm.html" aria-label="Read the case study: Driving global expansion."><div><div class="work-preview-identity"><img src="assets/logos/reward-transparent-v001.png" alt="Reward" loading="lazy"><span class="work-preview-meta">Reward Insights · 2021–2023</span></div><h3>Driving global expansion.</h3><p class="work-preview-description">An API-based loyalty platform, from concept to international launch.</p><span class="work-preview-action">Read the case study <span aria-hidden="true">→</span></span></div><div class="work-preview-outcome"><b>£1M+</b><span>profit by year two</span></div></a><a class="work-preview-project" href="case-olcs.html" aria-label="Read the case study: Modernising a national leave &amp; claims platform."><div><div class="work-preview-identity"><img src="assets/logos/irish-harp-transparent-v001.png" alt="Irish government harp" loading="lazy"><span class="work-preview-meta">EY · Department of Education (Ireland) · 2024–2026</span></div><h3>Modernising a national leave &amp; claims platform.</h3><p class="work-preview-description">Product ownership across three teams, connecting policy, service and payroll.</p><span class="work-preview-action">Read the case study <span aria-hidden="true">→</span></span></div><div class="work-preview-outcome"><b>1,000+</b><span>hours saved per month</span></div></a><a class="work-preview-project" href="case-liberty-equine.html" aria-label="Read the case study: Digital underwriting for brokers."><div><div class="work-preview-identity"><img src="assets/equine-horse.png" alt="Equine underwriting" loading="lazy"><span class="work-preview-meta">Liberty IT · Liberty Mutual · 2020–2021</span></div><h3>Digital underwriting for brokers.</h3><p class="work-preview-description">Equine and livestock products, from concept to launch.</p><span class="work-preview-action">Read the case study <span aria-hidden="true">→</span></span></div><div class="work-preview-outcome"><b>$5M</b><span>gross written premium</span></div></a></div></div></section>
+
+  <section class="leadership homepage-approach" id="approach"><div class="wrap"><div class="section-heading"><div><p class="section-label">02 / How I lead</p><h2>Clarity before velocity.<br><em>Outcomes over output.</em></h2></div></div><picture class="home-ppp-visual"><source media="(max-width:640px)" srcset="assets/approach-ppp-mobile-v002.png"><img src="assets/approach-ppp-desktop-v003.png" alt="Philosophy, represented by a compass; Principles, represented by a filter; Process, represented by connected steps." loading="lazy"></picture><div class="home-ppp home-ppp-concepts"><article><h3>Start with the impact.</h3></article><article><h3>Make complexity clear.</h3></article><article><h3>Create systems to deliver.</h3></article></div><div class="home-approach-footer"><a class="quiet-link" href="approach.html">Explore my approach ${arrow}</a></div></div></section>
+
+  ${window.portfolioRecommendations(S.reviews)}
+
+
+
+  <section class="now-section"><div class="wrap now-layout"><div><p class="section-label">Currently / Ocorian</p><h2>Putting AI to work.<br><em>Beyond the prototype.</em></h2><p>As Senior AI Product Manager, I report to the CIO and lead the business–IT relationship for HR transformation.</p><p>I’ve delivered live process automation across ${current.countries} countries and built an AI-enabled onboarding MVP that has transitioned to the development team.</p></div><div class="now-evidence"><span class="now-label">Current work · HR transformation</span><strong>80%<span>+</span></strong><p>reduction in processing time<br>for core automated HR processes</p><div class="now-divider"></div><div class="now-bottom"><b>${current.countries} countries</b><span>AI · Automation · Integrations</span></div></div></div></section>
+
+  <section class="experience" id="changelog"><div class="wrap"><div class="section-heading"><div><p class="section-label">04 / Experience</p><h2>A track record<br><em>across complex domains.</em></h2><p class="experience-breadth">Professional training and hands-on experience across product strategy, architecture, large-scale programme management, engineering, quality and service management.</p><a class="quiet-link experience-capabilities-link" href="specs.html">Explore my capabilities &amp; credentials ${arrow}</a></div></div><figure class="career-journey-visual"><div class="career-journey-interactive" role="tablist" aria-label="Career stages"><img src="assets/career-journey-v004.png" width="1960" height="450" loading="lazy" alt="Career journey: Engineering from 2006, Consulting from 2012, Product and Platform from 2016, and AI Product from 2024 to now."><button type="button" class="career-milestone milestone-engineering" role="tab" id="experience-foundations-tab" aria-selected="false" tabindex="-1" data-career-target="experience-foundations" aria-controls="experience-foundations" aria-label="Show engineering experience from 2006" title="Show engineering experience"></button><button type="button" class="career-milestone milestone-consulting" role="tab" id="experience-consulting-tab" aria-selected="false" tabindex="-1" data-career-target="experience-consulting" aria-controls="experience-consulting" aria-label="Show consulting experience from 2012" title="Show consulting experience"></button><button type="button" class="career-milestone milestone-product" role="tab" id="experience-product-tab" aria-selected="false" tabindex="-1" data-career-target="experience-product" aria-controls="experience-product" aria-label="Show product and platform experience from 2016" title="Show product and platform experience"></button><button type="button" class="career-milestone milestone-ai" role="tab" id="experience-ai-tab" aria-selected="true" tabindex="0" data-career-target="experience-ai" aria-controls="experience-ai" aria-label="Show AI product experience from 2024" title="Show AI product experience"></button></div></figure>${careerSections}<div class="experience-foot"><a class="quiet-link" href="${S.person.resume}">View full CV ${icon("download")}</a></div></div></section>
+
+  <section class="hiring-contact" id="contact"><div class="wrap contact-layout"><div><p class="section-label">05 / Your next product leader</p><h2>Have a complex<br>product challenge?<br><em>Let’s talk.</em></h2><p>I’m interested in senior product roles where strategy, technical depth and delivery leadership can make a measurable difference.</p><div class="contact-actions"><a class="btn btn-accent" href="${email}">Discuss a role ${icon("mail")}</a><a class="contact-cv" href="${S.person.resume}" download>Download my CV ${icon("download")}</a></div></div><div class="contact-details"><div class="contact-portrait"><img src="assets/salman.jpg" alt="Salman Abdul Ghaffar" loading="lazy"><div class="contact-portrait-caption">Salman Abdul Ghaffar<small>Hands-on product leader</small></div></div><a href="${S.person.links[0].url}" target="_blank" rel="noopener">Connect on LinkedIn ${icon("linkedin")}</a><p>Belfast, United Kingdom</p></div></div></section>`;
+};
+
 /* Renders the site from window.SITE (content/site.js).
    You shouldn't need to edit this file to change content or section order. */
 (function () {
@@ -9,8 +154,7 @@
   const kindLabel = { add: 'Added', imp: 'Improved', fix: 'Fixed' };
   const caseUrl = c => `case.html?id=${encodeURIComponent(c.id)}`;
   const tags = list => list && list.length ? `<div class="tags">${list.map(t => `<span>${t}</span>`).join('')}</div>` : '';
-  // Small section labels ("01 — How I work") switched off 2026-10-09: big headings only (the side menu already numbers the sections)
-  const eyebrow = () => '';
+  const eyebrow = (i, label) => `<div class="eyebrow mono">${num(i)} — ${label}</div>`;
 
   /* ---------------- Rail ---------------- */
   function rail() {
@@ -23,7 +167,7 @@
         <span class="brand-title">${p.title}</span>
       </a>
       ${p.status ? `<div class="status"><span class="dot"></span>${p.status}</div>` : ''}
-      <ul class="nav">
+      <ul class="nav" aria-label="Main navigation">
         ${live.map((s, i) => {
           const active = (page === 'specs' && s.id === 'specs') || ((page === 'case' || page === 'cases') && s.type === 'cases');
           return `<li><a href="${s.href || href(s.id)}" data-id="${s.id}" class="${active ? 'active' : ''}"><span class="n">${num(i)}</span>${s.label}</a></li>`;
@@ -55,7 +199,8 @@
           <p class="sub">${d.sub}</p>
           ${tags(d.skills)}
           <div class="cta-row">
-            ${casesSec ? `<a href="#${casesSec.id}" class="hero-link">See what I’ve shipped →</a>` : ''}
+            ${casesSec ? `<a href="#${casesSec.id}" class="btn btn-primary">Explore my case studies →</a>` : ''}
+            <a href="#contact" class="btn btn-ghost">Let’s talk</a>
           </div>
         </div>
         <div class="kpi-row reveal">${d.kpis.map(([v, l, href]) => href
@@ -70,24 +215,9 @@
     </section>`;
   };
 
-  /* Editorial case card (2026-10-09): logo + "Company · Sector", title, a thin row of numbers, link.
-     No pills, no grey box; the featured card is the same layout, wider, with 3 numbers.
-     compact = home page (no summary). */
+  /* Shared card treatment: one primary impact measure per project. */
   function caseCard(c, compact) {
-    const nums = c.featured
-      ? [c.metric, ...(c.results || []).filter(r => !c.metric || r[0] !== c.metric[0])].filter(Boolean).slice(0, 3)
-      : (c.heroStats || (c.metric ? [c.metric] : [])).slice(0, 2);
-    return `
-      <article class="case${c.featured ? ' feature' : ''} reveal">
-        <div class="case-co">
-          ${c.logo ? `<img src="${encodeURI(c.logo)}" alt="">` : ''}
-          <span>${[c.cardCompany || c.company, (c.tags || [])[0]].filter(Boolean).join(' · ')}</span>
-        </div>
-        <h3>${c.cardTitle || c.title}</h3>
-        ${!compact && c.summary ? `<p>${c.summary}</p>` : ''}
-        ${nums.length ? `<div class="case-nums">${nums.map(([v, l]) => `<div><b>${v}</b><span>${l}</span></div>`).join('')}</div>` : ''}
-        <a href="${caseUrl(c)}" class="more stretch">Read the case study</a>
-      </article>`;
+    return window.portfolioCaseCard(c);
   }
 
   R.cases = (s, i) => {
@@ -109,9 +239,10 @@
     return `
     <section class="cs-head">
       <div class="wrap">
-        <a class="back" href="index.html#work">← Back to home</a>
+        <a class="back" href="index.html#work">${window.portfolioActionIcon('left')} Back to home</a>
+        <div class="eyebrow mono">Shipped</div>
         <h2>All case studies</h2>
-        <p class="lede">${S.cases.length} products and platforms, from my first build to global launches. Open any one for the full story.</p>
+        <p class="lede">${S.cases.length} products and platforms, from my first build to global launches.</p>
         <div class="cases">${S.cases.map(c => caseCard(c, false)).join('')}</div>
       </div>
     </section>`;
@@ -123,7 +254,7 @@
       : `<span class="co-logo co-initials" aria-hidden="true">${e.initials || e.company.slice(0, 2)}</span>`;
     const links = (e.cases || []).map(id => S.cases.find(c => c.id === id)).filter(Boolean);
     return `
-      <div class="entry ${e.current ? 'current' : ''}" id="v${e.ver.replace('.', '-')}">
+      <div class="entry ${e.current ? 'current' : ''}">
         <div class="ver"><b>${e.ver}</b><span>${e.dates}</span>${e.contract ? '<span class="contract">Contract</span>' : ''}</div>
         <div class="entry-body">
           <div class="entry-head">${logo}<div><h3>${e.role}</h3><span class="co">${e.company}</span></div></div>
@@ -188,7 +319,6 @@
     return `
     <section id="${s.id}">
       <div class="wrap">
-        ${eyebrow(i, s.label)}
         <h2>${a.heading}</h2>
         ${a.sub ? `<p class="lede">${a.sub}</p>` : ''}
         <div class="method reveal">
@@ -263,118 +393,40 @@
       <span class="tool-name">${name}</span>
     </div>`;
 
-  // Small round badge next to a certification name; a neutral tick when there is no badge yet (e.g. ISTQB)
-  const certIcon = b => `<span class="cert-ico">${!b
-    ? icon('shield')
-    : b.img
-      ? `<img src="${encodeURI(b.img)}" alt="">`
-      : `<span class="badge-ico" style="--ico:url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/${b.icon}.svg');--c:${b.color || 'var(--ink)'}"></span>`}</span>`;
-
   function specsPage() {
     const sp = S.specs;
-    document.title = `Specs — ${S.person.name}`;
+    const action = window.portfolioActionIcon;
+    document.title = `Capabilities & credentials - ${S.person.name}`;
+    const links = entries => entries.map(link => `<a class="quiet-link" href="${link.href}">${link.label} ${action('right')}</a>`).join('');
+    const credential = name => {
+      const badge = sp.badges.find(b => b.name === name);
+      return `<li>${badge && badge.img ? `<img src="${encodeURI(badge.img)}" alt="" width="88" height="88" loading="lazy">` : '<span class="credential-dot" aria-hidden="true"></span>'}<span>${name}</span></li>`;
+    };
     return `
-    <section class="sp-head">
-      <div class="wrap">
-        <h1 class="sp-title">${sp.heading}</h1>
-      </div>
-    </section>
-
-    <section class="sp-sec sp-first">
-      <div class="wrap">
-        <div class="cap-map">
-          ${sp.expertise.map(g => `
-            <div class="cap">
-              <h3>${icon(g.icon)}${g.group}</h3>
-              <ul>${g.items.map(x => `<li>${x}</li>`).join('')}</ul>
-            </div>`).join('')}
-          <div class="cap-core"><span>${sp.core}</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="sp-sec">
-      <div class="wrap">
-        <h2 class="sp-h">Sectors ${sp.sectorsNote ? `<small>${sp.sectorsNote}</small>` : ''}</h2>
-        <div class="sector-grid">
-          ${sp.sectors.map(g => `
-            <div class="sector">
-              ${icon(g.icon)}
-              <h3>${g.group}</h3>
-              <ul>${g.items.map(x => `<li>${x}</li>`).join('')}</ul>
-            </div>`).join('')}
-        </div>
-      </div>
-    </section>
-
-    <section class="sp-sec">
-      <div class="wrap">
-        <h2 class="sp-h">Education</h2>
-        ${sp.educationIntro ? `<p class="sp-intro">${sp.educationIntro}</p>` : ''}
-        <div class="cred-edu">
-          ${sp.education.map(e => `
-            <div class="edu-card">
-              <div class="edu-top">
-                ${e.logo ? `<img src="${encodeURI(e.logo)}" alt="">` : ''}
-                <div><h3>${e.degree}</h3><p>${e.school} · ${e.years}</p>${e.result ? `<span class="edu-result">${e.result}</span>` : ''}</div>
-              </div>
-              ${e.modules ? `
-              <details class="edu-mods">
-                <summary>Show modules</summary>
-                <dl>${e.modules.map(([g, m]) => `<dt>${g}</dt><dd>${m}</dd>`).join('')}</dl>
-              </details>` : ''}
-            </div>`).join('')}
-        </div>
-      </div>
-    </section>
-
-    <section class="sp-sec">
-      <div class="wrap">
-        <h2 class="sp-h">Certifications</h2>
-        <div class="cert-cols">
-          ${sp.certifications.map(g => `
-            <div><h3>${g.group}</h3><ul>${g.items.map(x => `<li>${certIcon(sp.badges.find(b => b.name === x))}<span>${x}</span></li>`).join('')}</ul></div>`).join('')}
-        </div>
-      </div>
-    </section>
-
-    <section class="sp-sec">
-      <div class="wrap">
-        <h2 class="sp-h">Tools</h2>
-        ${sp.tools.map(g => `
-          <div class="tool-group">
-            <h3>${g.group}</h3>
-            <div class="tool-grid">${g.items.map(toolTile).join('')}</div>
-          </div>`).join('')}
-      </div>
-    </section>`;
+    <section class="capabilities-hero"><div class="wrap">
+      <a class="back" href="index.html#changelog">${action('left')} Experience</a>
+      <h1>Capabilities &amp; credentials</h1><p class="lede">${sp.lead}</p>
+      <nav class="capabilities-nav" aria-label="On this page"><a href="#capabilities">Capabilities</a><a href="#industries">Industries</a><a href="#credentials">Credentials</a><a href="#tools">Tools</a></nav>
+    </div></section>
+    <section class="capabilities-section" id="capabilities"><div class="wrap">
+      <h2>What I bring.</h2>
+      <div class="capabilities-list">${sp.capabilities.map((g,i) => `<article class="capability-chapter"><div class="capability-heading"><span class="capability-number">0${i+1}</span><h3>${g.title}</h3></div><div class="capability-copy"><p>${g.description}</p><ul>${g.strengths.map(item => `<li>${item}</li>`).join('')}</ul><div class="capability-evidence">${links(g.evidence)}</div></div></article>`).join('')}</div>
+      <details class="capabilities-detail"><summary>Detailed expertise &amp; delivery methods</summary><div class="capabilities-detail-grid">${sp.expertise.map(g => `<div><h3>${g.group}</h3><ul>${g.items.map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('')}</div></details>
+    </div></section>
+    <section class="capabilities-section" id="industries"><div class="wrap"><div class="capabilities-section-heading"><h2>Across eight industries.</h2><p>Different domains. The same focus on clear decisions and useful products.</p></div>
+      <div class="capabilities-industries">${sp.industries.map(g => `<article><h3>${g.name}</h3><p>${g.detail}</p></article>`).join('')}</div>
+    </div></section>
+    <section class="capabilities-section" id="credentials"><div class="wrap"><h2>Credentials that support the work.</h2>
+      <div class="capabilities-credentials">${sp.certifications.map(g => `<article><h3>${g.group}</h3>${g.note?`<p class="credential-note">${g.note}</p>`:''}<ul>${g.items.map(credential).join('')}</ul></article>`).join('')}</div>
+      ${sp.historicalTraining?.length?`<details class="capabilities-detail"><summary>Earlier professional training</summary><div class="capabilities-detail-grid">${sp.historicalTraining.map(g=>`<div><h3>${g.group}</h3><ul>${g.items.map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('')}</div></details>`:''}
+      <h3 class="capabilities-education-title">Education</h3><p class="capabilities-intro">${sp.educationIntro}</p>
+      <div class="cred-edu">${sp.education.map(e=>`<article class="edu-card"><div class="edu-top">${e.logo ? `<img src="${encodeURI(e.logo)}" alt="" width="52" height="52" loading="lazy">`:''}<div><h3>${e.degree}</h3><p>${e.school} &middot; ${e.years}</p>${e.result?`<span class="edu-result">${e.result}</span>`:''}</div></div>${e.modules?`<details class="edu-mods"><summary>Course modules</summary><dl>${e.modules.map(([g,m])=>`<dt>${g}</dt><dd>${m}</dd>`).join('')}</dl></details>`:''}</article>`).join('')}</div>
+    </div></section>
+    <section class="capabilities-section" id="tools"><div class="wrap"><h2>Tools across the product lifecycle.</h2><p class="capabilities-intro">Tools used across my career in product, delivery, architecture and engineering, including earlier technical work.</p>
+      <div class="capabilities-tools">${sp.tools.map(g=>`<div><h3>${g.group}</h3><ul>${g.items.map(([name])=>`<li>${name}</li>`).join('')}</ul></div>`).join('')}</div>
+    </div></section>
+    <section class="capabilities-close"><div class="wrap"><h2>See these capabilities in practice.</h2><div><a class="btn btn-primary" href="cases.html">Explore selected work ${action('right')}</a><a class="quiet-link" href="${S.person.resume}" download>Download CV ${action('download')}</a></div></div></section>`;
   }
-
-  // One review card: short line (their own words), name, button. The full text sits hidden in the card
-  // and is shown in the grid's shared panel, placed right under the row of the card that was opened.
-  // Where a recommendation leads: r.exp = a case study id ('reward-gmm') or a Career version ('3.1').
-  // Returns {href, logo, initials, label} using the logo already stored on that case study / Career entry.
-  const revExp = r => {
-    if (!r.exp) return null;
-    const c = S.cases.find(x => x.id === r.exp);
-    if (c) return { href: caseUrl(c), logo: c.logo, label: `${c.cardCompany || c.company}: case study` };
-    const e = (S.changelog || []).find(x => x.ver === r.exp);
-    if (e) return { href: `index.html#v${e.ver.replace('.', '-')}`, logo: e.logo, initials: e.initials, label: `${e.company}: ${e.role}` };
-    return null;
-  };
-  const revCard = r => {
-    const x = revExp(r);
-    // logo shown under the name; the whole open panel links to the experience (stretched link)
-    const expLink = x ? `<span class="rev-exp">${x.logo
-      ? `<img src="${encodeURI(x.logo)}" alt="">` : `<span class="co-initials">${x.initials || ''}</span>`}</span><a class="rev-panel-link" href="${x.href}" aria-label="${x.label}"></a>` : '';
-    return `
-    <figure class="review reveal">
-      <blockquote class="pull">“${r.pull || r.text[0]}”</blockquote>
-      ${who(r)}
-      <button type="button" class="rev-open" aria-expanded="false"><span class="lbl-more">Read full recommendation</span><span class="lbl-less">Hide full recommendation</span></button>
-      <div class="rev-src" hidden><div class="rev-panel-who">${who(r)}${expLink}</div><div class="rev-panel-text">${r.text.map(p => `<p>${p}</p>`).join('')}</div></div>
-    </figure>`;
-  };
 
   R.reviews = (s, i) => {
     const rv = S.reviews;
@@ -385,11 +437,27 @@
         ${eyebrow(i, s.label)}
         <h2>${rv.heading}</h2>
         ${rv.sub ? `<p class="lede">${rv.sub}</p>` : ''}
-        <div class="reviews">${rv.featured.map(revCard).join('')}<div class="rev-panel" hidden></div></div>
+        <div class="reviews">
+          ${rv.featured.map(r => `
+            <figure class="review reveal">
+              <blockquote class="pull">“${r.pull}”</blockquote>
+              ${who(r)}
+              <details class="rev-full"><summary><span class="lbl-more">Read full recommendation</span><span class="lbl-less">Hide full recommendation</span></summary>
+                ${r.text.map(p => `<p>${p}</p>`).join('')}
+              </details>
+            </figure>`).join('')}
+        </div>
         <details class="rev-all">
           <summary class="btn btn-ghost"><span class="lbl-more">Show all ${total} recommendations</span><span class="lbl-less">Show fewer</span></summary>
-          <div class="reviews reviews-more">${rv.more.map(revCard).join('')}<div class="rev-panel" hidden></div></div>
+          <div class="rev-grid">
+            ${rv.more.map(r => `
+              <figure class="rev-card">
+                ${who(r)}
+                <div class="rev-body">${reviewText(r.text)}</div>
+              </figure>`).join('')}
+          </div>
         </details>
+        ${rv.linkedin ? `<p class="rev-source">From my LinkedIn recommendations. <a class="inline-link" href="${rv.linkedin}" target="_blank" rel="noopener">View my LinkedIn profile ${window.portfolioActionIcon("linkedin")}</a></p>` : ''}
       </div>
     </section>`;
   };
@@ -434,12 +502,39 @@
   /* ---------------- Case study page ---------------- */
   /* New case study layout (layout: 'v2'): header with logo, tinted hero numbers, fact cards, partner logos,
      quote, then the story as icon cards (long sections full width) behind "Read the full story". Wording unchanged. */
+  function caseHeading(c) {
+    return `<div class="case-heading-layout"><div class="case-heading-copy">
+      ${c.label ? `<span class="cs2-label">${c.label}</span>` : ''}
+      <h1>${c.title}</h1>
+      <p class="case-role-date">${[c.role,c.year].filter(Boolean).join(' · ')}</p>
+      ${tags(c.tags)}
+    </div><div class="case-company-identity">
+      ${c.logo ? `<img src="${encodeURI(c.logo)}" alt="">` : ''}
+      <b>${c.company}</b>
+    </div></div>`;
+  }
+
   function casePageV2(c, next) {
+    const editorialClass = {'reward-gmm':'gmm-case',olcs:'doe-case','liberty-equine':'liberty-case','service-hive':'hive-case'}[c.id];
+    const caseClass = editorialClass ? `${editorialClass} editorial-case` : '';
     const blockText = b => [].concat(b.p).map(t => t.trim().startsWith('<') ? t : `<p>${t}</p>`).join('');
     const isLong = b => [].concat(b.p).join(' ').replace(/<[^>]+>/g, '').length > 520 || [].concat(b.p).some(t => /<(ol|ul)\b/.test(t));
     const quotes = [c.quote, c.quote2].filter(Boolean);
     // Short sections pair up two per row; a short one without a short neighbour goes full width (no half-empty rows).
     const story = c.story || [];
+    const contentsHeadings = {
+      'reward-gmm':['Strategic Initiative','Transformation','Outstanding Results','Conclusion'],
+      'service-hive':['Current situation','Key decisions','Results','What I learned'],
+      'liberty-equine':['The challenge','Automated rating removed the two-expert bottleneck','Outcomes','What I learned'],
+      'copyrite-genuscan':['About the project','From an idea to a product','Results','What I learned'],
+      olcs:['The business challenge','Established a repeatable path from policy to delivery','Results and leadership impact','Lessons learned']
+    };
+    const labels = ['Challenge','Decisions','Outcomes','Lessons'];
+    const contents = [['Overview','case-overview'],...(contentsHeadings[c.id] || []).flatMap((heading,i) => {
+      const index = story.findIndex(block => block.h === heading);
+      return index < 0 ? [] : [[labels[i],`case-section-${index+1}`]];
+    })];
+    const contentsLinks = () => contents.map(([label,id])=>`<a class="case-contents-link" href="#${id}">${label}</a>`).join('');
     const wide = story.map(isLong);
     for (let k = 0; k < story.length; k++) {
       if (wide[k]) continue;
@@ -447,15 +542,11 @@
       wide[k] = true;
     }
     return `
-    <section class="cs2-head">
+    <div class="case-reading-layout"><aside class="case-contents" aria-label="Case study contents"><nav class="case-contents-desktop" aria-label="On this page"><p>On this page</p>${contentsLinks()}</nav><details class="case-contents-mobile"><summary>On this page</summary><nav aria-label="On this page">${contentsLinks()}</nav></details></aside><div class="case-reading-content">
+    <section class="cs2-head ${caseClass}" id="case-overview" tabindex="-1">
       <div class="wrap">
-        <a class="back" href="cases.html">← All case studies</a>
-        ${c.label ? `<span class="cs2-label">${c.label}</span>` : ''}
-        <h1>${c.title}</h1>
-        <div class="cs2-co">
-          ${c.logo ? `<img src="${encodeURI(c.logo)}" alt="">` : ''}
-          <div><b>${c.company}</b><span>${[c.role, c.year].filter(Boolean).join(' · ')}</span></div>
-        </div>
+        <a class="back" href="cases.html">${window.portfolioActionIcon('left')} All case studies</a>
+        ${caseHeading(c)}
         ${c.heroStats ? `<div class="cs2-hero">${c.heroStats.map(([v, l]) => `<div><b>${v}</b><p>${l}</p></div>`).join('')}</div>` : ''}
         ${c.facts ? `<div class="cs2-facts">${c.facts.map(([v, l]) => `<div><b>${v}</b><span>${l}</span></div>`).join('')}</div>` : ''}
         ${c.partners ? `
@@ -475,23 +566,23 @@
         </figure>`).join('') : ''}
       </div>
     </section>
-    <section class="cs2-story-sec">
+    <section class="cs2-story-sec ${caseClass}">
       <div class="wrap">
         <div class="cs2-story-head">
-          <h2>The full story</h2>
-          <button type="button" class="cs2-toggle" aria-expanded="true" aria-controls="cs2-story">
+          <h2>${c.id === 'reward-gmm' ? 'From concept to global platform' : c.id === 'olcs' ? 'From complex policy to a clearer service' : c.id === 'liberty-equine' ? 'From manual underwriting to a broker product' : c.id === 'service-hive' ? 'From fragmented support to global servicing' : 'The full story'}</h2>
+          ${!editorialClass?`<button type="button" class="cs2-toggle" aria-expanded="true" aria-controls="cs2-story">
             <span class="lbl-more">Read the full story</span><span class="lbl-less">Hide the full story</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
+          </button>`:''}
         </div>
         <div class="cs2-story is-open" id="cs2-story"><div>
           <div class="cs2-steps">
             ${story.map((b, k) => `
-              <article class="cs2-step">
+              <article class="cs2-step" id="case-section-${k+1}" tabindex="-1">
                 <span class="cs2-ic">${icon((c.storyIcons || {})[b.h] || 'doc')}</span>
                 <h3>${b.h}</h3>
                 ${blockText(b)}
-              </article>`).join('')}
+              </article>${c.id === 'reward-gmm' && b.h === 'Strategic Initiative' ? `<div class="gmm-story-visual"><div class="gmm-visual-heading"><p class="section-label">The loyalty platform</p><h2>Connecting retailers, banks and consumers.</h2></div>${window.portfolioGmmEcosystem()}</div>` : ''}${c.id === 'reward-gmm' && b.h === 'Transformation' ? window.portfolioGmmVisuals() : ''}${c.id === 'olcs' && b.h === 'Simplified workflows and strengthened payroll accuracy' ? window.portfolioCaseProductVisual('public') : ''}${c.id === 'liberty-equine' && b.h === 'User research and UX decisions' ? window.portfolioCaseProductVisual('insurance') : ''}`).join('')}
           </div>
           ${quotes.slice(1).map(q => `
           <figure class="cs2-quote">
@@ -506,27 +597,26 @@
       <div class="wrap">
         <a class="cs-next" href="${caseUrl(next)}"><div><span class="mono" style="color:var(--muted)">Next case study</span><b>${next.title}</b></div><span class="more"></span></a>
       </div>
-    </section>` : ''}`;
+    </section>` : ''}</div></div>`;
   }
 
   function casePage() {
-    const id = new URLSearchParams(location.search).get('id');
+    const id = document.body.dataset.caseId || new URLSearchParams(location.search).get('id');
     const idx = S.cases.findIndex(c => c.id === id);
     const c = S.cases[idx];
-    if (!c) return `<section><div class="wrap"><a class="back" href="cases.html">← All case studies</a><h2>Case study not found</h2></div></section>`;
+    if (!c) return `<section><div class="wrap"><a class="back" href="cases.html">${window.portfolioActionIcon('left')} All case studies</a><h2>Case study not found</h2></div></section>`;
     document.title = `${c.title} — ${S.person.name}`;
     const next = S.cases[(idx + 1) % S.cases.length];
     if (c.layout === 'v2') return casePageV2(c, next);
-    const facts = [['Company', c.company], ['When', c.year], ['My role', c.role], ['Timeline', c.timeline]].filter(x => x[1]);
+    const facts = [['Timeline', c.timeline]].filter(x => x[1]);
     const results = c.results || (c.metric ? [c.metric] : []);
     return `
     <section class="cs-head">
       <div class="wrap">
-        <a class="back" href="cases.html">← All case studies</a>
-        ${tags(c.tags)}
-        <h1>${c.title}</h1>
+        <a class="back" href="cases.html">${window.portfolioActionIcon('left')} All case studies</a>
+        ${caseHeading(c)}
         ${c.summary ? `<p class="lede">${c.summary}</p>` : ''}
-        <div class="cs-facts">${facts.map(([k, v]) => `<div><span>${k}</span>${v}</div>`).join('')}</div>
+        ${facts.length ? `<div class="cs-facts">${facts.map(([k, v]) => `<div><span>${k}</span>${v}</div>`).join('')}</div>` : ''}
         ${results.length ? `<div class="cs-results">${results.map(([v, l]) => `<div><b>${v}</b><span>${l}</span></div>`).join('')}</div>` : ''}
       </div>
     </section>
@@ -550,13 +640,99 @@
     </section>` : ''}`;
   }
 
+
+  function approachPage() {
+    document.title = `My approach — ${S.person.name}`;
+    const frame = S.approach.frame;
+    const chapters = frame.map((item, index) => `<section class="approach-chapter" id="approach-${item.label.toLowerCase()}"><div class="wrap approach-chapter-layout"><header><p class="section-label">0${index+1} / ${item.label}</p><h2>${item.title}</h2></header><div class="approach-chapter-copy"><p class="approach-chapter-lead">${item.short}</p>${item.more}${item.label==='Process'?`<div class="approach-delivery-stages">${S.approach.stages.map((stage,i)=>`<article><div class="approach-stage-heading"><span>0${i+1}</span><h3>${stage.name}</h3><small>${stage.d}</small></div><p>${stage.short}</p>${stage.more}</article>`).join('')}</div><p class="approach-feedback">${S.approach.loop}</p>`:''}</div></div></section>`).join('');
+    return `<section class="approach-intro approach-redesign"><div class="wrap"><a class="quiet-link back-navigation" href="index.html#approach">${window.portfolioActionIcon('left')} Back to Leadership</a><p class="section-label">How I work</p><h1>A clear direction.<br>A system for delivery.</h1><p class="lede">My philosophy, principles and process for turning complex problems into products that work.</p><picture class="approach-overview-art"><source media="(max-width:640px)" srcset="assets/approach-process-mobile-v002.png"><img src="assets/approach-process-desktop-v002.png" alt="Hands-on product leadership: set direction, shape the product, engineer for scale, deliver and evolve, then return to direction through continuous learning. Responsible AI underpins every stage; human-led." loading="lazy"></picture><nav class="approach-contents" aria-label="My approach sections">${frame.map(item=>`<a href="#approach-${item.label.toLowerCase()}">${item.label} ${window.portfolioActionIcon('down')}</a>`).join('')}</nav></div></section>${chapters}<section class="approach-evidence"><div class="wrap"><div><p class="section-label">In practice</p><h2>See the decisions.<br>And what changed.</h2></div><a class="btn btn-primary" href="cases.html">Explore the case studies ${window.portfolioActionIcon('right')}</a></div></section>`;
+  }
   /* ---------------- Mount ---------------- */
-  document.querySelector('.rail').innerHTML = rail();
+  const normaliseCaseLinks = html => S.cases.reduce((result, c) => result.replaceAll(`href="case.html?id=${encodeURIComponent(c.id)}"`, `href="case-${c.id}.html"`), html);
+  const legacyCase = page === 'case' && !document.body.dataset.caseId && S.cases.find(c => c.id === new URLSearchParams(location.search).get('id'));
+  if (legacyCase && typeof location.replace === 'function') {
+    location.replace(`case-${legacyCase.id}.html${location.hash || ''}`);
+    return;
+  }
+  if (document.body.dataset.prerendered !== 'true') {
+  document.querySelector('.rail').innerHTML = window.portfolioHeader ? window.portfolioHeader(S, page) : rail();
   const main = document.querySelector('main');
   main.innerHTML = (onHome
-    ? live.map((s, i) => (R[s.type] ? R[s.type](s, i) : '')).join('')
-    : page === 'cases' ? casesPage() : page === 'specs' ? specsPage() : casePage())
-    + `<footer><span>© ${new Date().getFullYear()} ${S.person.name}</span><span class="mono">${S.intro.release ? S.intro.release.tag : ''}</span></footer>`;
+    ? (window.portfolioHome ? window.portfolioHome(S) : live.map((s, i) => (R[s.type] ? R[s.type](s, i) : '')).join(''))
+    : page === 'approach' ? approachPage() : page === 'cases' ? casesPage() : page === 'specs' ? specsPage() : casePage())
+    + `<footer><span>© ${new Date().getFullYear()} ${S.person.name}</span>${onHome ? '' : `<a href="${S.person.links[0].url}" target="_blank" rel="noopener">LinkedIn ${window.portfolioActionIcon("linkedin")}</a>`}</footer>`;
+  main.innerHTML = normaliseCaseLinks(main.innerHTML);
+  }
+
+  /* Career stages switch in place; selection never scrolls the page. */
+  if (onHome) {
+    const tabs = [...document.querySelectorAll('.career-milestone[role="tab"]')];
+    const revealCareer = (tab, animate = true) => {
+      const viewport = document.querySelector('.career-journey-visual');
+      if (!viewport || viewport.scrollWidth <= viewport.clientWidth) return;
+      const left = tab.offsetLeft, right = left + tab.offsetWidth;
+      const current = viewport.scrollLeft;
+      const target = left < current ? left : right > current + viewport.clientWidth ? right - viewport.clientWidth : current;
+      if (target !== current) viewport.scrollTo({left: target, behavior: animate && !window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'smooth' : 'auto'});
+    };
+    const selectCareer = (tab, updateUrl = true) => {
+      tabs.forEach(item => {
+        const selected = item === tab;
+        item.setAttribute('aria-selected', String(selected));
+        item.tabIndex = selected ? 0 : -1;
+        document.getElementById(item.getAttribute('aria-controls')).hidden = !selected;
+      });
+      if (updateUrl) history.replaceState(null, '', '#' + tab.getAttribute('aria-controls'));
+      revealCareer(tab, updateUrl);
+    };
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => selectCareer(tab));
+      tab.addEventListener('keydown', event => {
+        let next;
+        if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+        if (event.key === 'ArrowLeft') next = (index + tabs.length - 1) % tabs.length;
+        if (event.key === 'Home') next = 0;
+        if (event.key === 'End') next = tabs.length - 1;
+        if (next === undefined) return;
+        event.preventDefault();
+        selectCareer(tabs[next]);
+        tabs[next].focus({preventScroll: true});
+      });
+    });
+    const initialTab = tabs.find(tab => '#' + tab.getAttribute('aria-controls') === location.hash);
+    if (initialTab) selectCareer(initialTab, false);
+    else {
+      const selected = tabs.find(tab => tab.getAttribute('aria-selected') === 'true');
+      if (selected) revealCareer(selected, false);
+    }
+  }
+
+  /* Case contents: close the mobile disclosure and reveal a collapsed story before following anchors. */
+  document.querySelectorAll('.case-contents-link').forEach(link => link.addEventListener('click', () => {
+    const target = document.getElementById(link.getAttribute('href').slice(1));
+    const story = target && target.closest('.cs2-story');
+    if (story) {
+      story.classList.add('is-open');
+      const toggle = document.querySelector('.cs2-toggle');
+      if (toggle) toggle.setAttribute('aria-expanded', 'true');
+    }
+    const mobile = document.querySelector('.case-contents-mobile');
+    if (mobile) mobile.open = false;
+  }));
+
+  /* Responsive navigation */
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      const open = menuToggle.getAttribute('aria-expanded') !== 'true';
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+      mobileMenu.hidden = !open;
+    });
+    mobileMenu.addEventListener('click', e => { if (e.target.closest('a')) { mobileMenu.hidden = true; menuToggle.setAttribute('aria-expanded', 'false'); menuToggle.setAttribute('aria-label', 'Open navigation'); } });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !mobileMenu.hidden) { mobileMenu.hidden = true; menuToggle.setAttribute('aria-expanded', 'false'); menuToggle.setAttribute('aria-label', 'Open navigation'); menuToggle.focus(); } });
+  }
 
   /* Active nav on scroll (home only) */
   if (onHome) {
@@ -567,7 +743,7 @@
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
     live.forEach(s => { const el = document.getElementById(s.id); if (el) obs.observe(el); });
-    if (location.hash) { const t = document.querySelector(location.hash); if (t) t.scrollIntoView(); }
+    if (location.hash) { const t = document.getElementById(decodeURIComponent(location.hash.slice(1))); if (t) t.scrollIntoView(); }
   }
 
   /* Case study v2: "Read the full story" toggle */
@@ -577,41 +753,6 @@
     const open = t.getAttribute('aria-expanded') !== 'true';
     t.setAttribute('aria-expanded', String(open));
     document.getElementById(t.getAttribute('aria-controls')).classList.toggle('is-open', open);
-  });
-
-  /* Links to a Career entry (#v3-1): open "Show earlier versions" if the entry is inside it, then scroll to it */
-  const goToHash = () => {
-    const el = location.hash.length > 1 && document.getElementById(decodeURIComponent(location.hash.slice(1)));
-    if (!el) return;
-    const d = el.closest('details');
-    if (d && !d.open) d.open = true;
-    el.classList.add('flash');
-    setTimeout(() => el.classList.remove('flash'), 1600);
-    requestAnimationFrame(() => el.scrollIntoView({ block: 'center' }));
-  };
-  window.addEventListener('hashchange', goToHash);
-  if (/^#v\d/.test(location.hash)) setTimeout(goToHash, 50);
-
-  /* Featured reviews: full text opens in one panel under the row (other cards keep their size) */
-  document.addEventListener('click', e => {
-    const btn = e.target.closest('.rev-open');
-    if (!btn) return;
-    const grid = btn.closest('.reviews'), card = btn.closest('.review'), panel = grid.querySelector('.rev-panel');
-    const open = btn.getAttribute('aria-expanded') !== 'true';
-    grid.querySelectorAll('.review').forEach(c => {
-      c.classList.remove('is-open');
-      c.querySelector('.rev-open').setAttribute('aria-expanded', 'false');
-    });
-    panel.hidden = true;
-    if (!open) return;
-    card.classList.add('is-open');
-    btn.setAttribute('aria-expanded', 'true');
-    panel.innerHTML = card.querySelector('.rev-src').innerHTML;
-    // put the panel after the last card on the same row
-    const cards = [...grid.querySelectorAll('.review')];
-    const rowEnd = cards.filter(c => c.offsetTop === card.offsetTop).pop();
-    rowEnd.after(panel);
-    panel.hidden = false;
   });
 
   /* Inline "Read more" / "Show less" */
@@ -635,7 +776,7 @@
 
   /* Visitor stats (GoatCounter: no cookies, no banner). Only on the live site, only when a code is set. */
   const gc = S.analytics && S.analytics.goatcounter;
-  if (gc && !/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
+  if (false && gc && !/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
     const s = document.createElement('script');
     s.async = true;
     s.src = 'https://gc.zgo.at/count.js';
@@ -643,3 +784,4 @@
     document.body.appendChild(s);
   }
 })();
+
