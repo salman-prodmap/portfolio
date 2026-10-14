@@ -938,15 +938,16 @@ window.SITE = {
     {
       "ver": "3.9",
       "dates": "Mar 2024 – Feb 2026",
-      "role": "Product Owner",
-      "company": "EY · Department of Education (Ireland)",
+      "role": "Senior Product Owner",
+      "company": "EY Ireland",
       "contract": true,
-      "logo": "assets/logos/department_of_education__skills_rep_of_ireland_logo.jpg",
+      "logo": "",
       "cases": [
         "olcs"
       ],
       "highlight": "Product Owner across 3 delivery teams on OLCS — national platform serving 90,000+ teachers, ~4,000 schools, and 20,000+ school users, managing statutory leave and payroll workflows in highly regulated environment.",
       "more": [
+        "End client: Department of Education, Ireland. Provided Senior Product Owner services as part of the EY Ireland consulting team on OLCS modernisation.",
         "EY is a global leader in assurance, tax, and advisory services, helping clients drive growth and navigate complex challenges.",
         "Reported to EY Partner, owned roadmap integrity, risk reporting, and executive progress reviews for a regulated public-sector transformation.",
         "Converted undocumented legacy logic (policy, tribal knowledge, system behaviour) into structured, testable business rules, accelerating development and testing.",
@@ -958,7 +959,9 @@ window.SITE = {
         "Conceived and piloted Generative AI early-warning system to flag high-risk leave submissions; reduced claim rejection rates by ~50%, preventing payroll disruption and operational failure.",
         "Re-engineered multiple fragile legacy workflows and unlocked 1,000+ operational hours a month in savings across the programme while preserving core database integrity.",
         "Technology & tools: Azure cloud, MFA, SSO, MUI, Figma, Visio, GitHub."
-      ]
+      ],
+      "endClient": "Department of Education, Ireland",
+      "initials": "EY"
     },
     {
       "ver": "3.8",
