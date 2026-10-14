@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <title>Openwave — vector reconstruction from small supplied reference</title>
+  <defs>
+    <linearGradient id="upper" x2="1" y2="1"><stop stop-color="#311076"/><stop offset="1" stop-color="#79609b"/></linearGradient>
+    <linearGradient id="right" x2="0" y2="1"><stop stop-color="#79609b"/><stop offset="1" stop-color="#c7b6d3"/></linearGradient>
+  </defs>
+  <path fill="url(#upper)" d="M19 20C25 10 52 13 76 31c12 9 17 19 13 25-2-12-18-25-35-32-14-6-25-6-28-1-5 8 7 26 20 40C25 53 13 32 19 20Z"/>
+  <path fill="url(#right)" d="M89 56C85 68 59 82 34 84c17-5 39-17 43-28 6-15-16-21-37-16 17-11 54-1 49 16Z"/>
+  <path fill="#8255a5" d="M34 84C15 95 12 69 17 42c-1 22 1 35 7 35 9 0 17-24 21-34 1 17-3 34-11 41Z"/>
+</svg>

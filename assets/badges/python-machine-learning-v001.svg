@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+<title id="title">Machine Learning (Python)</title><desc id="desc">Custom portfolio illustration with code and connected data nodes; not an official qualification issuer badge.</desc>
+<circle cx="120" cy="120" r="113" fill="#fff" stroke="#3976a3" stroke-width="5"/>
+<circle cx="120" cy="120" r="103" fill="#edf4fa" stroke="#b5ccdc" stroke-width="1.5"/>
+<path d="m83 45-22 24 22 24m74-48 22 24-22 24" fill="none" stroke="#3976a3" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="m108 49 24 18-24 19m24-19 15 17" fill="none" stroke="#7f929c" stroke-width="3"/>
+<g fill="#ffd34f" stroke="#bc8d22" stroke-width="2"><circle cx="108" cy="49" r="7"/><circle cx="132" cy="67" r="8"/><circle cx="108" cy="86" r="7"/><circle cx="147" cy="84" r="6"/></g>
+<g font-family="Arial,Helvetica,sans-serif" text-anchor="middle" fill="#062251"><text x="120" y="140" font-size="35" font-weight="700">Python</text><text x="120" y="174" font-size="18" font-weight="700">MACHINE</text><text x="120" y="198" font-size="18" font-weight="700">LEARNING</text></g>
+</svg>
