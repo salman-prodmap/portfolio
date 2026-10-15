@@ -70,6 +70,7 @@ window.SITE = {
     "title": "Hands-on Product Leader",
     "status": "",
     "resume": "assets/Salman-Abdul-Ghaffar-CV.pdf",
+    "resumeShort": "assets/Salman-Abdul-Ghaffar-One-Page-CV.pdf",
     "email": "salman@prodmap.co.uk",
     "links": [
       {
@@ -93,7 +94,7 @@ window.SITE = {
       "Architecture & strategy"
     ],
     "headline": "From complex business problems to products that <span class=\"hl\">work at scale.</span>",
-    "sub": "I combine product strategy, technical depth and delivery leadership to build new platforms and improve established ones.",
+    "sub": "I lead business and technology teams to deliver complex transformation—from strategy to operational readiness.",
     "photo": "",
     "spec": [],
     "kpis": [
@@ -723,7 +724,7 @@ window.SITE = {
     {
       "id": "olcs",
       "title": "Modernising Ireland’s national leave and claims platform",
-      "company": "EY · Department of Education (Ireland)",
+      "company": "EY Ireland · Department of Education (Ireland)",
       "year": "March 2024–February 2026",
       "tags": [
         "Government",
@@ -738,7 +739,7 @@ window.SITE = {
       ],
       "layout": "v2",
       "label": "Case study · Government",
-      "logo": "assets/logos/department_of_education__skills_rep_of_ireland_logo.jpg",
+      "logo": "assets/logos/ey-supplied-v001.webp",
       "heroStats": [
         [
           "~5 → 30",
@@ -775,7 +776,7 @@ window.SITE = {
         ],
         [
           "EY",
-          ""
+          "assets/logos/ey-supplied-v001.webp"
         ]
       ],
       "storyIcons": {
@@ -941,7 +942,7 @@ window.SITE = {
       "role": "Senior Product Owner",
       "company": "EY Ireland",
       "contract": true,
-      "logo": "",
+      "logo": "assets/logos/ey-supplied-v001.webp",
       "cases": [
         "olcs"
       ],
@@ -987,6 +988,7 @@ window.SITE = {
       "role": "Product Owner / Founder",
       "company": "Independent consumer brand · Amazon UK",
       "initials": "CB",
+      "logo": "assets/logos/amazon.jpg",
       "highlight": "Built and launched a consumer brand sold through Amazon UK.",
       "more": [
         "Owned brand identity, product design, packaging and compliance; achieved a 4.8-star customer rating.",
