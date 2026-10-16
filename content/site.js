@@ -1284,7 +1284,12 @@ window.SITE = {
         "Integrated JIRA, TestRail and automated test results through REST APIs; supported functional testing, release practices and test environments.",
         "## Client: DAERA",
         "DAERA was procuring a new animal health system, and Deloitte provided advisory services for the process.",
-        "Role: As a Technical business analyst, evaluated the responses from six vendors throughout procurement, and presented key findings and justification for the evaluation to senior stakeholders. Evaluated domains: non-functional requirements, including business continuity, disaster recovery and data archiving; integration with partner systems and government payment gateway; Software Development Lifecycle (SDLC) and innovation approach; solution architecture and its alignment to DAERA’s vision for Service Oriented Architecture (SOA).",
+        "Role: As a Technical business analyst, evaluated the responses from six vendors throughout procurement.",
+        "Presented key findings and justification for the evaluation to senior stakeholders. Evaluated the following domains:",
+        "Non-functional requirements, including business continuity, disaster recovery and data archiving.",
+        "Integration with partner systems and government payment gateway.",
+        "Software Development Lifecycle (SDLC) and innovation approach.",
+        "Solution architecture and its alignment to DAERA’s vision for Service Oriented Architecture (SOA).",
         "## Client: DVLA",
         "Deloitte led the replacement of the DVLA’s Secure Cards System, handling over 5 million UK driving licences, digital tachographs, and biometric residence permits.",
         "Role: As Technical Product Owner took ownership of the full product lifecycle, including requirements definition, integration with multiple vendors, non-functional requirements, and operational acceptance testing (OAT).",
@@ -1484,7 +1489,7 @@ window.SITE = {
     "lead": "Product leadership, technical depth and a system for delivery.",
     "capabilities": [
       {
-        "title": "Product strategy & discovery",
+        "title": "Product and Delivery",
         "description": "Define the problem, document the detail and give teams a clear direction.",
         "strengths": [
           "Current-state analysis, user friction and competitive landscape",
@@ -1503,45 +1508,7 @@ window.SITE = {
         ]
       },
       {
-        "title": "AI, platforms & architecture",
-        "description": "Connect business needs, data and technology to build products that work in practice.",
-        "strengths": [
-          "AI-enabled products, automation and integrations",
-          "API platforms, data modelling and master data management",
-          "Enterprise architecture, target operating models and governance"
-        ],
-        "evidence": [
-          {
-            "label": "Current AI product work",
-            "href": "index.html#experience-ai"
-          },
-          {
-            "label": "API platform case study",
-            "href": "case.html?id=reward-gmm"
-          }
-        ]
-      },
-      {
-        "title": "Delivery & operational readiness",
-        "description": "Turn product decisions into reliable services, with quality designed into delivery.",
-        "strengths": [
-          "Cross-functional team leadership and end-to-end delivery",
-          "Performance, resilience, scalability and security requirements",
-          "UAT, operational acceptance and service transition"
-        ],
-        "evidence": [
-          {
-            "label": "Liberty Mutual",
-            "href": "case.html?id=liberty-equine"
-          },
-          {
-            "label": "National leave & claims platform",
-            "href": "case.html?id=olcs"
-          }
-        ]
-      },
-      {
-        "title": "Commercial & stakeholder leadership",
+        "title": "Stakeholder & Commercial Leadership",
         "description": "Align people and investment around the value a product can create.",
         "strengths": [
           "Executive alignment, influencing and stakeholder engagement",
@@ -1558,45 +1525,93 @@ window.SITE = {
             "href": "index.html#changelog"
           }
         ]
+      },
+      {
+        "title": "Strategy, Analysis & architecture",
+        "description": "Connect business needs, data and technology to build products that work in practice.",
+        "strengths": [
+          "AI-enabled products, automation and integrations",
+          "Prompt engineering, prompt chaining and retrieval-augmented generation (RAG)",
+          "API platforms, data modelling and master data management",
+          "Enterprise architecture, target operating models and governance"
+        ],
+        "evidence": [
+          {
+            "label": "Current AI product work",
+            "href": "index.html#experience-ai"
+          },
+          {
+            "label": "API platform case study",
+            "href": "case.html?id=reward-gmm"
+          }
+        ]
+      },
+      {
+        "title": "Governance, Risk & Quality",
+        "description": "Turn product decisions into reliable services, with quality designed into delivery.",
+        "strengths": [
+          "Cross-functional team leadership and end-to-end delivery",
+          "Performance, resilience, scalability and security requirements",
+          "UAT, operational acceptance and service transition"
+        ],
+        "evidence": [
+          {
+            "label": "Liberty Mutual",
+            "href": "case.html?id=liberty-equine"
+          },
+          {
+            "label": "National leave & claims platform",
+            "href": "case.html?id=olcs"
+          }
+        ],
+        "focus": "Operational readiness"
       }
     ],
     "industries": [
       {
         "name": "Banking",
-        "detail": "Retail banking and loyalty platforms"
+        "detail": "Retail banking and loyalty platforms",
+        "icon": "assets/sector-icons/watercolour-v002/banking.svg"
       },
       {
         "name": "Insurance",
-        "detail": "Underwriting, digital claims, integration and data migration"
+        "detail": "Underwriting, digital claims, integration and data migration",
+        "icon": "assets/sector-icons/watercolour-v002/insurance.svg"
       },
       {
         "name": "Public services",
-        "detail": "Education, agriculture, licensing and regulation"
+        "detail": "Education, agriculture, licensing and regulation",
+        "icon": "assets/sector-icons/watercolour-v002/public-services.svg"
       },
       {
         "name": "Telecommunications",
-        "detail": "Large-scale telecom products and platforms"
+        "detail": "Large-scale telecom products and platforms",
+        "icon": "assets/sector-icons/watercolour-v002/telecommunications.svg"
       },
       {
         "name": "Energy",
-        "detail": "Electricity networks and enterprise analysis"
+        "detail": "Electricity networks and enterprise analysis",
+        "icon": "assets/sector-icons/watercolour-v002/energy.svg"
       },
       {
         "name": "Social housing",
-        "detail": "IT strategy and architecture"
+        "detail": "IT strategy and architecture",
+        "icon": "assets/sector-icons/watercolour-v002/social-housing.svg"
       },
       {
         "name": "Pharmaceuticals",
-        "detail": "Global analytics and account intelligence"
+        "detail": "Global analytics and account intelligence",
+        "icon": "assets/sector-icons/watercolour-v002/pharmaceuticals-v003.svg"
       },
       {
         "name": "Retail",
-        "detail": "Merchant offers and commercial platforms"
+        "detail": "Merchant offers and commercial platforms",
+        "icon": "assets/sector-icons/watercolour-v002/retail.svg"
       }
     ],
     "expertise": [
       {
-        "group": "Product Management",
+        "group": "Product and Delivery",
         "icon": "kanban",
         "items": [
           "SAFe, Scrum, Kanban, XP, Lean Six Sigma, Waterfall",
@@ -1608,18 +1623,6 @@ window.SITE = {
         ]
       },
       {
-        "group": "Enterprise Analysis & Architecture",
-        "icon": "layers",
-        "items": [
-          "Business analysis & architecture",
-          "Systems & enterprise alignment",
-          "Data analytics & data modelling",
-          "Master data management",
-          "Target operating models",
-          "Architecture governance"
-        ]
-      },
-      {
         "group": "Stakeholder & Commercial Leadership",
         "icon": "people",
         "items": [
@@ -1628,6 +1631,18 @@ window.SITE = {
           "Commercial awareness and value realisation",
           "Communication & influencing",
           "Client-facing engagements"
+        ]
+      },
+      {
+        "group": "Strategy, Analysis & architecture",
+        "icon": "layers",
+        "items": [
+          "Business analysis & architecture",
+          "Systems & enterprise alignment",
+          "Data analytics & data modelling",
+          "Master data management",
+          "Target operating models",
+          "Architecture governance"
         ]
       },
       {
@@ -1676,6 +1691,10 @@ window.SITE = {
         "items": [
           [
             "Claude Code",
+            ""
+          ],
+          [
+            "Claude Cowork",
             ""
           ],
           [
@@ -2348,7 +2367,8 @@ window.SITE = {
         "text": [
           "Salman is a very strong technical product manager, and has a thorough approach to defining products, features and detailed stories. He led the development of the API product, the Global Merchant Marketplace (GMM), from concept through to launch with global clients. This included internationalisation (multi-language, currency and servicing) and managing a relationship with the client technical team.",
           "Salman’s leadership transformed the GMM vision into reality, propelling Reward to new heights in the global fintech space. His strategic approach and relentless dedication have been instrumental in driving the company’s success."
-        ]
+        ],
+        "relationship": "Client"
       },
       {
         "name": "Declan Ballantyne",
@@ -2359,7 +2379,8 @@ window.SITE = {
         "pull": "A product-minded leader who brings clarity to complex problems, unifies teams into a single delivery unit, and sets a high quality bar.",
         "text": [
           "Salman is a product-minded leader who brings clarity to complex problems, unifies teams into a single delivery unit, and sets a high quality bar. He applied this consistently over a large, multi-year modernisation of a system for a large government department in the Republic of Ireland. Salman is an excellent communicator and a real team player. It has been a pleasure working with him over the past 18 months."
-        ]
+        ],
+        "relationship": "Client"
       },
       {
         "name": "Paul McGurnaghan OBE",
@@ -2371,7 +2392,9 @@ window.SITE = {
           "DAERA engaged Salman on an Enterprise Architecture assignment, as he came highly recommended in this area of work. He certainly lived up to his reputation and hit the ground running in completing an EA maturity assessment and gap analysis within a short timeframe.",
           "He expertly covered architecture governance, business architecture, application architecture, data architecture, technology architecture and tool support, delivering a very well defined and prioritised roadmap. I was very impressed with his complex analysis and ability to distil this down into practical steps leading to improvement. He is an expert communicator with excellent interpersonal skills.",
           "So if you are looking to engage someone to assist or drive enterprise architecture within your organisation, you would be hard pressed to find anyone as good as Salman."
-        ]
+        ],
+        "relationship": "Client",
+        "teaser": "I was very impressed with his complex analysis and ability to distil this down into practical steps leading to improvement."
       }
     ],
     "more": [
@@ -2384,7 +2407,9 @@ window.SITE = {
           "Salman is relentless about value, constantly looking for where a relatively small investment can unlock a disproportionate return, often targeting opportunities in the region of 10–25x ROI.",
           "As the initiative has grown, Salman has continued to shape and lead the broader HR transformation roadmap. He has a real ability to operate at every level, from setting the wider direction and driving complex initiatives through to working through the detailed data and process decisions needed to make them work. He brings together technical teams, delivery partners and stakeholders, navigates complex dependencies and keeps everyone aligned around the broader outcome.",
           "Beyond delivery, Salman brings real intelligence, strong product thinking and a genuinely collaborative, considerate manner, with plenty of quick wit along the way. We’re holding on to him for as long as we can, but I wouldn’t hesitate to recommend Salman to any organisation once his time with us ends."
-        ]
+        ],
+        "relationship": "Client",
+        "teaser": "Salman is relentless about value, constantly looking for where a relatively small investment can unlock a disproportionate return, often targeting opportunities in the region of 10–25x ROI."
       },
       {
         "name": "Justyna John",
@@ -2393,7 +2418,9 @@ window.SITE = {
         "text": [
           "I worked closely with Salman across both Product and Marketing and he consistently brought a strong, solutions-driven Product Manager mindset to our go-to-market deliverables. He has a real ability to cut through complexity, bring clarity to challenging product areas and elevate how we position and communicate value.",
           "His input was pivotal in strengthening our overall go-to-market strategy and improving the quality of our commercial outputs. Salman’s commercial insight and ability to turn product features into clear market value strengthened our GTM story."
-        ]
+        ],
+        "relationship": "Client",
+        "teaser": "Salman’s commercial insight and ability to turn product features into clear market value strengthened our GTM story."
       },
       {
         "name": "Tracy Webb",
@@ -2403,7 +2430,9 @@ window.SITE = {
         "text": [
           "I have had the pleasure of working with Salman as a Product Owner at Reward. Salman works hard to align stakeholders, ensuring that he communicates a clear product vision. Salman’s active involvement in supporting pre-sales technical and product architecture discussions has been invaluable, showcasing his adeptness in managing a spectrum of business and technical stakeholders.",
           "Notably, Salman’s contributions extend to the creation of comprehensive product documentation, encompassing both the functional and non-functional, which has supported us in facilitating clear understanding of our solutions and services, particularly among our global clients. Salman took an active role in understanding and supporting the optimal commercial outcome of our new business activities, particularly when we were entering new geographies."
-        ]
+        ],
+        "relationship": "Client",
+        "teaser": "Salman’s active involvement in supporting pre-sales technical and product architecture discussions has been invaluable"
       },
       {
         "name": "Natasha O’Kane",
@@ -2418,7 +2447,9 @@ window.SITE = {
           "He’s equally strong with stakeholders. He builds relationships beautifully, draws out what people really need rather than simply taking requirements at face value, and knows how to influence and drive a group towards an outcome without losing people along the way.",
           "And when the rest of us inevitably disappear into the weeds of technology, process and delivery, Salman has a wonderful ability to pull us back up and remind us what we’re actually here to create.",
           "He has real product judgement, an instinct for the user and a genuine care for the craft of building beautiful products. I would work with Salman again in a heartbeat, and I really hope I get to."
-        ]
+        ],
+        "relationship": "Colleague",
+        "teaser": "knows how to influence and drive a group towards an outcome without losing people along the way"
       },
       {
         "name": "Aditya Kawatkar",
@@ -2427,7 +2458,9 @@ window.SITE = {
         "location": "Ireland",
         "text": [
           "Salman understands people as individuals. He adapts his leadership style to bring out the best in each person, builds trust quickly, and turns groups into high-performing teams. People don’t just deliver under Salman — they grow and reach their full potential."
-        ]
+        ],
+        "relationship": "Colleague",
+        "teaser": "He adapts his leadership style to bring out the best in each person"
       },
       {
         "name": "Sunny Matharu",
@@ -2436,7 +2469,9 @@ window.SITE = {
         "text": [
           "I have worked with many Business Analysts over the last 10 years. Salman has been one of the very best. Due to his varied background, he has a rare blend of technical and functional skills, backed up by solid architecture principles, all while working in an Agile project environment.",
           "A fantastic example of the esteem he is held in, and the value he offers, is the way in which our client management pressed me to find out what I could do “to make sure we keep Salman on our projects”. He is endearing, diligent and a joy to work with. His departure was a loss to Deloitte, as his acquisition will be a massive boon to whomever he works with in the future."
-        ]
+        ],
+        "relationship": "Manager",
+        "teaser": "client management pressed me to find out what I could do “to make sure we keep Salman on our projects”"
       },
       {
         "name": "Heidi Philyaw",
@@ -2446,7 +2481,9 @@ window.SITE = {
         "text": [
           "I would highly recommend Salman as a product owner. He joined our project about a month in, post discovery and framing, and didn’t miss a beat. He’s an excellent communicator, negotiator, and team player. His confidence and leadership has helped propel our product forward to an incredible MVP delivery.",
           "As a newcomer to the Agile methodology, I have learned a tremendous amount from him, especially in respect of user journeys, user stories, requirements engineering, and backlog management. He is extremely methodical and goes well in depth in testing, thinking up nearly every scenario a user could possibly try. I have so enjoyed getting to know Salman personally and professionally, and look forward to our continued collaboration!"
-        ]
+        ],
+        "relationship": "Client",
+        "teaser": "His confidence and leadership has helped propel our product forward to an incredible MVP delivery."
       },
       {
         "name": "Gillian Spence",
@@ -2456,7 +2493,9 @@ window.SITE = {
         "text": [
           "I had the pleasure of working with Salman for 18 months at Allstate Northern Ireland, collaborating on a SAFe initiative in the Claims space. Salman is a goal-driven, customer-centric product owner with a desire to drive business value for his stakeholders. He repeatedly sought ways to continually improve, both at a team level and at a program level within the Release Train.",
           "Salman has a firm understanding of Agile principles and practices. He was instrumental in driving the delivery of core ETL components for the product. This complex feature demonstrated his desire to take on extra responsibility. Overall it was a pleasure working with Salman and he would be a great asset to any team."
-        ]
+        ],
+        "relationship": "Client",
+        "teaser": "He was instrumental in driving the delivery of core ETL components for the product."
       },
       {
         "name": "Sunil I. Modi",
@@ -2464,7 +2503,9 @@ window.SITE = {
         "role": "Senior Manager, Deloitte",
         "text": [
           "Salman was an inspiration for many team members in the program; his ability to partner with multiple workstreams and get the jobs done surpassed expectations. His contributions really made a big impact on the success of the program. I thoroughly enjoyed working with him; he is always full of genius ideas and has a friendly attitude with his co-workers. He has a great analytical and product mindset. Very happy to recommend him."
-        ]
+        ],
+        "relationship": "Colleague",
+        "teaser": "his ability to partner with multiple workstreams and get the jobs done surpassed expectations"
       },
       {
         "name": "Ryan Ings",
@@ -2473,7 +2514,9 @@ window.SITE = {
         "context": "Reported to Salman at Northern Ireland Electricity",
         "text": [
           "I worked with Salman on a project over 9 months, to review the client’s business processes, identify delays and recommend improvements. Salman was the driving force in the team’s approach to the project, expertly managing workshops and stakeholders to gather the required information. He shared his experience with the team and I feel he helped me develop within my role."
-        ]
+        ],
+        "relationship": "Colleague",
+        "teaser": "Salman was the driving force in the team’s approach to the project, expertly managing workshops and stakeholders to gather the required information."
       },
       {
         "name": "Bhargava Adapa",
@@ -2484,7 +2527,9 @@ window.SITE = {
           "It’s my absolute pleasure to recommend Salman for his exceptional contributions to our projects at Caspian Digital Solutions. Salman’s ability to dive deep into the technicalities of User Requirement Specifications (URS) has been a game-changer for us. His meticulous approach ensured that every project requirement was not only captured but also aligned perfectly with our strategic goals.",
           "Beyond the URS, Salman demonstrated unparalleled skill in crafting the project implementation plan. His strategic foresight and detailed scheduling of each phase allowed us to anticipate challenges and adapt quickly, ensuring a smooth and successful execution. His contribution to creating User Acceptance Testing scenarios was equally impressive, and was instrumental in minimising post-launch issues and enhancing user satisfaction…",
           "Salman’s consulting acumen was invaluable. His insights and advice often steered us through complex decisions, balancing technical possibilities with business realities. I cannot recommend him highly enough for any endeavours he chooses to pursue."
-        ]
+        ],
+        "relationship": "Client",
+        "teaser": "His meticulous approach ensured that every project requirement was not only captured but also aligned perfectly with our strategic goals."
       },
       {
         "name": "David Holmes",
@@ -2493,7 +2538,9 @@ window.SITE = {
         "context": "Worked together on DVSA discovery",
         "text": [
           "I worked with Salman on the DVSA discovery project. Salman is a professional through and through; he has a keen eye for detail and a solid understanding of the BA and Product domain. Salman is very friendly and supportive, a strong team player and a pleasure to work with. I would recommend Salman because he makes a great addition to any team: a solid all-rounder."
-        ]
+        ],
+        "relationship": "Colleague",
+        "teaser": "Salman is very friendly and supportive, a strong team player and a pleasure to work with"
       },
       {
         "name": "Ian Stewart",
@@ -2502,7 +2549,9 @@ window.SITE = {
         "text": [
           "I worked with Salman for a number of years and he was a respected, well liked and valued member of the team. He was extremely self-sufficient, resourceful and capable, and his commitment and work ethic was exemplary.",
           "Salman was at the forefront of the software technology in our sector at the time, which required him to be resourceful, use his initiative and work with others within Copyrite and our partners. His communication skills helped him to work well with others, relate with all the relevant external parties and work well in the team. His technical and analytical skills meant that he grasped the project quickly and was able to lead and drive the project on at a high level. It is my pleasure to recommend Salman."
-        ]
+        ],
+        "relationship": "Manager",
+        "teaser": "He was extremely self-sufficient, resourceful and capable, and his commitment and work ethic was exemplary."
       }
     ]
   },
