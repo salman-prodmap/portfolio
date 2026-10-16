@@ -68,7 +68,7 @@ window.portfolioRecommendations = function(reviews) {
   const escape = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
   const all = [...reviews.featured, ...reviews.more];
   const selections = [
-    ['Tracy Webb', 'Salman’s active involvement in supporting pre-sales technical and product architecture discussions has been invaluable, showcasing his adeptness in managing a spectrum of business and technical stakeholders.'],
+    ['Piers Sanders', 'Salman’s leadership transformed the GMM vision into reality, propelling Reward to new heights in the global fintech space.'],
     ['Declan Ballantyne', 'Salman is a product-minded leader who brings clarity to complex problems, unifies teams into a single delivery unit, and sets a high quality bar.']
   ];
   const attribution = r => {
@@ -83,7 +83,7 @@ window.portfolioRecommendations = function(reviews) {
     return `<figure class="recommendation-entry"><figcaption><h3>${escape(r.name)}</h3>${attribution(r)}</figcaption><blockquote><p>“${escape(excerpt)}”</p></blockquote><details class="recommendation-full"><summary aria-label="Toggle full recommendation from ${escape(r.name)}"><span class="recommendation-expand-icon" aria-hidden="true"></span></summary><div>${fullText(r)}</div></details></figure>`;
   }).join('');
   const selectedNames = new Set(selections.map(([name]) => name));
-  const remaining = all.filter(r => !selectedNames.has(r.name));
+  const remaining = all.filter(r => !selectedNames.has(r.name)).sort((a,b) => Number(b.name === 'Tracy Webb') - Number(a.name === 'Tracy Webb'));
   return `<section class="recommendation-spotlight" id="reviews"><div class="wrap testimonials-preview-layout"><div class="testimonials-preview-intro"><p class="section-label">03 / In good company</p><h2>Leadership,<em>seen by others.</em></h2><a class="quiet-link" href="${escape(reviews.linkedin)}" target="_blank" rel="noopener">Recommendations on LinkedIn ${window.portfolioActionIcon('linkedin')}</a></div><div class="testimonials-preview-voices" id="featured-recommendations">${primary}</div><details class="recommendations-more testimonials-preview-all"><summary>View all recommendations <span>${remaining.length} more voices</span></summary><div class="recommendations-directory">${remaining.map(r => `<details class="recommendation-directory-entry"><summary><span class="recommendation-person"><b>${escape(r.name)}</b>${attribution(r)}</span></summary><div>${fullText(r)}</div></details>`).join('')}</div></details></div></section>`;
 };
 window.portfolioHome = function(S) {
