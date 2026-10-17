@@ -913,27 +913,70 @@ window.SITE = {
   "changelog": [
     {
       "ver": "3.10",
-      "dates": "Apr 2026 – present",
+      "dates": "Mar–Oct 2026",
       "role": "Senior AI Product Manager",
       "company": "Ocorian",
       "contract": true,
       "current": true,
       "countries": 20,
       "logo": "assets/logos/ocorian_logo.jpg",
-      "highlight": "Reporting to the CIO, act as the business-IT relationship lead for HR transformation.",
+      "highlight": "Led HR transformation across 20 countries, combining product leadership, business analysis, service design and solution architecture to build a connected colleague-lifecycle platform.",
       "more": [
-        "Ocorian is a global fund, corporate and private client services provider, supporting asset managers, financial institutions and family offices across 25+ jurisdictions.",
-        "Created the vision for Platform-I, a future-state HR technology platform designed to transform HR service delivery across the employee lifecycle through AI, automation, integration and self-service.",
-        "Partnered with the Head of HR Operations and global HR leadership across 20 countries, translating business challenges into a strategic HR technology and AI roadmap and prioritising initiatives based on value, feasibility and ROI.",
-        "Led the adoption of AI and automation across HR, applying GenAI, RAG, prompt chaining and orchestration to identify and deliver high-value transformation opportunities.",
-        "Delivered live automation across core HR processes, including Change of Circumstance and reference-letter generation, reducing processing time by over 80% and improving SLA compliance across 20 countries.",
-        "Designed and built an AI-enabled end-to-end employee onboarding platform, integrating recruitment, SmartRecruiters, BambooHR, iManage and Veremark. Took the concept from future-state vision and product design through to a working MVP, now transitioned to the development team.",
-        "Established an MVP-led transformation model, enabling rapid validation and incremental delivery of AI and automation initiatives rather than traditional big-bang programmes.",
-        "Shaped the future-state HR technology ecosystem, including process architecture, integrations, data flows and opportunities for AI-enabled self-service across the employee lifecycle.",
-        "Represented the HR transformation strategy to the CIO and CDO, providing executive-level visibility of roadmap, investment, risks, capacity, benefits and ROI.",
-        "Directed resourcing, budget and delivery priorities for a Mauritius-based technology team, aligning delivery capacity with strategic transformation priorities and business demand.",
-        "Built stronger alignment between HR and IT by introducing structured problem discovery, prioritisation and value assessment, accelerating delivery of high-impact transformation initiatives.",
-        "Technology & tools: OpenAI, Workato, Power Automate, custom apps."
+        "Reported to the CIO and partnered with the Head of HR Operations and global HR leadership at Ocorian, a global fund, corporate and private client services provider.",
+        "## Verification letters",
+        "Delivered AI-enabled verification-letter generation automation, reducing processing time from 20 minutes to 2 minutes and releasing 1,000 hours of annual capacity.",
+        "Automated incoming-email routing and workflow creation, selected the relevant letter template and populated employee details, retrieving additional information from BambooHR when needed.",
+        "Kept human review and approval before integrations sent or filed the letter as required. Supported requests included employment confirmations and bank reference letters.",
+        "## Change of Circumstances",
+        "Delivered AI-enabled Change of Circumstances automation with human review. Realised annual capacity benefit: 1,000 hours.",
+        "Prototyped the user experience and gathered early user feedback before production development. Developed and delivered training on AI and the Change of Circumstances solution.",
+        "Structured an incremental roadmap from single and multiple requests to AI email classification, workflow creation and thread tracking, followed by BambooHR employee-data updates, duplicate-request tracking, DocuSign signatures and automatic document storage. Retained human review throughout the design.",
+        "## iManage & employee files",
+        "Led employee-file transformation across 2,000+ legacy records in iManage, covering reconciliation, migration, metadata, folder structures, role-based access control and integration design.",
+        "Automated employee-file creation for new joiners as part of the onboarding journey.",
+        "## Compensation planning & calibration",
+        "Built and delivered compensation planning and calibration tools through AI-assisted coding (vibe coding) using Microsoft Copilot, releasing 500 HR hours and 5,000 managerial hours of annual capacity.",
+        "## Onboarding",
+        "Designed and built an end-to-end onboarding application through AI-assisted coding, connecting recruitment, candidate review, SmartRecruiters, BambooHR, iManage, Veremark, communications and colleague-readiness activities.",
+        "Iterated the application approximately 30 times to validate requirements with business and engineering teams. The application is now transitioning to the development team.",
+        "Designed the journey modularly, enabling a pivot when planned SmartRecruiters functionality became unavailable without redesigning downstream steps. Created reusable rules and onboarding documentation, including payroll information across 20 jurisdictions.",
+        "## Strategy & investment",
+        "Shaped problems early in the engagement and established traceability from organisational priorities to HR objectives and product decisions. Compliance by design and an unrivalled colleague experience were guiding objectives.",
+        "Reframed individual process automation around the full colleague lifecycle and a reusable HR Operations platform. Created the vision for Platform-I, with modular foundations for onboarding, probation and offboarding.",
+        "Developed business cases with the Head of HR Operations, including probation and performance management, and a benefits-led roadmap distinguishing realised, expected and forecast value against investment, risk and reusable capability.",
+        "Provided executive visibility of roadmap, investment, risks, capacity, benefits and ROI; managed the allocated budget and development-resource allocation for a Mauritius-based team.",
+        "Captured and categorised 45+ Next Matter platform limitations, including CI/CD, versioning and form-design constraints. Encouraged team contributions and used this shared evidence to improve supplier accountability and influence its roadmap.",
+        "Identified a lower-cost DocuSign integration approach through Workato, with indicative per-signature costs of approximately $0.05 rather than $6.",
+        "## Delivery, adoption & governance",
+        "Combined product leadership, business analysis, service design, solution architecture, Scrum Master and project-management responsibilities, translating problems into prototypes, requirements and sprint objectives.",
+        "Used GenAI, RAG, prompt chaining and orchestration to develop incremental HR solutions, using AI as a transitional layer while deterministic systems were developed and retaining the existing HR email channel during migration.",
+        "Protected engineering focus, managed blockers and delivery trade-offs, and coordinated business, engineering and platform teams.",
+        "Managed delivery dependencies across development and test environments, access, credentials, SmartRecruiters, DocuSign and iManage. Aligned HR, testing and administration stakeholders on test and production environments; raised change requests and represented releases at the Change Advisory Board.",
+        "Introduced shift-left testing using representative anonymised production scenarios and test data, including HR emails for Change of Circumstances testing and AI-model evaluation. Managed user acceptance testing (UAT) for HR transformation delivery.",
+        "Engagement scheduled to conclude at the end of October 2026 following an organisational restructure and programme closure.",
+        "Technology & tools: OpenAI, Microsoft Copilot, Workato, Power Automate, Next Matter, BambooHR, SmartRecruiters, DocuSign, iManage, Veremark and custom applications."
+      ],
+      "plannedEnd": "Ends October 2026",
+      "endDate": "2026-10-31",
+      "benefits": [
+        {
+          "label": "AI-enabled verification letters",
+          "hours": 1000,
+          "detail": "Processing time: 20 minutes to 2",
+          "status": "realised"
+        },
+        {
+          "label": "AI-enabled Change of Circumstances",
+          "hours": 1000,
+          "detail": "Email-driven HR automation",
+          "status": "realised"
+        },
+        {
+          "label": "Compensation & calibration",
+          "hours": 5500,
+          "detail": "500 HR + 5,000 managerial hours",
+          "status": "realised"
+        }
       ]
     },
     {
@@ -1256,7 +1299,8 @@ window.SITE = {
         "Gathered feedback and incorporated it into the product roadmap.",
         "Led the data migration from SharePoint into the Salesforce based product.",
         "Led the offshore Salesforce development team, sprint ceremonies and reporting of sprint performance indicators for Eli Lilly."
-      ]
+      ],
+      "employmentType": "Permanent"
     },
     {
       "ver": "2.0",
@@ -1327,7 +1371,8 @@ window.SITE = {
         "Conducted IT and business capability maturity assessments for benchmarking and improvements.",
         "Conducted end-user surveys, to measure the current IT service effectiveness.",
         "Reviewed IT infrastructure and identified business-process bottlenecks and points of failure."
-      ]
+      ],
+      "employmentType": "Permanent"
     },
     {
       "ver": "1.2",
@@ -1344,7 +1389,8 @@ window.SITE = {
         "Led offshore testing and advised on test strategy; supported deployment teams and resolved customer acceptance defects. Became a subject-matter contact for end-to-end product testing.",
         "Recorded one of the highest bug-fixing rates in continuous-engineering rotations; introduced Review Board and supported adoption.",
         "Trained local and global junior colleagues and new hires, including buddying responsibilities."
-      ]
+      ],
+      "employmentType": "Permanent"
     },
     {
       "ver": "1.1",
@@ -1362,7 +1408,8 @@ window.SITE = {
         "Led departmental code review using Review Board and contributed internal/external product documentation.",
         "Carried out ISO quality-management audits; proposed audit templates that reduced auditor preparation time by at least 50%.",
         "Owned team induction documentation and processes and supported client product demonstrations."
-      ]
+      ],
+      "employmentType": "Permanent"
     },
     {
       "ver": "1.0",
@@ -1494,7 +1541,8 @@ window.SITE = {
         "strengths": [
           "Current-state analysis, user friction and competitive landscape",
           "Product strategy, prioritisation and roadmaps",
-          "Clear, testable requirements and shared understanding"
+          "Clear, testable requirements and shared understanding",
+          "AI-assisted rapid prototyping and iterative stakeholder validation"
         ],
         "evidence": [
           {
@@ -1531,7 +1579,7 @@ window.SITE = {
         "description": "Connect business needs, data and technology to build products that work in practice.",
         "strengths": [
           "AI-enabled products, automation and integrations",
-          "Prompt engineering, prompt chaining and retrieval-augmented generation (RAG)",
+          "AI skills: prompt engineering, prompt chaining and retrieval-augmented generation (RAG)",
           "API platforms, data modelling and master data management",
           "Enterprise architecture, target operating models and governance"
         ],
@@ -1571,42 +1619,42 @@ window.SITE = {
       {
         "name": "Banking",
         "detail": "Retail banking and loyalty platforms",
-        "icon": "assets/sector-icons/watercolour-v002/banking.svg"
+        "icon": "assets/sector-icons/watercolour-v003/banking.svg"
       },
       {
         "name": "Insurance",
         "detail": "Underwriting, digital claims, integration and data migration",
-        "icon": "assets/sector-icons/watercolour-v002/insurance.svg"
+        "icon": "assets/sector-icons/watercolour-v003/insurance.svg"
       },
       {
         "name": "Public services",
         "detail": "Education, agriculture, licensing and regulation",
-        "icon": "assets/sector-icons/watercolour-v002/public-services.svg"
+        "icon": "assets/sector-icons/watercolour-v003/public-services.svg"
       },
       {
         "name": "Telecommunications",
         "detail": "Large-scale telecom products and platforms",
-        "icon": "assets/sector-icons/watercolour-v002/telecommunications.svg"
+        "icon": "assets/sector-icons/watercolour-v003/telecommunications.svg"
       },
       {
         "name": "Energy",
         "detail": "Electricity networks and enterprise analysis",
-        "icon": "assets/sector-icons/watercolour-v002/energy.svg"
+        "icon": "assets/sector-icons/watercolour-v003/energy.svg"
       },
       {
         "name": "Social housing",
         "detail": "IT strategy and architecture",
-        "icon": "assets/sector-icons/watercolour-v002/social-housing.svg"
+        "icon": "assets/sector-icons/watercolour-v003/social-housing.svg"
       },
       {
         "name": "Pharmaceuticals",
         "detail": "Global analytics and account intelligence",
-        "icon": "assets/sector-icons/watercolour-v002/pharmaceuticals-v003.svg"
+        "icon": "assets/sector-icons/watercolour-v003/pharmaceuticals.svg"
       },
       {
         "name": "Retail",
         "detail": "Merchant offers and commercial platforms",
-        "icon": "assets/sector-icons/watercolour-v002/retail.svg"
+        "icon": "assets/sector-icons/watercolour-v003/retail.svg"
       }
     ],
     "expertise": [
@@ -1694,7 +1742,11 @@ window.SITE = {
             ""
           ],
           [
-            "Claude Cowork",
+            "OpenAI Codex",
+            ""
+          ],
+          [
+            "Microsoft Cowork",
             ""
           ],
           [
