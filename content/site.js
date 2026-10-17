@@ -1537,12 +1537,14 @@ window.SITE = {
     "capabilities": [
       {
         "title": "Product and Delivery",
-        "description": "Define the problem, document the detail and give teams a clear direction.",
+        "description": "Set product direction and lead complex delivery—from discovery and investment decisions to launch, scale and measurable outcomes.",
         "strengths": [
-          "Current-state analysis, user friction and competitive landscape",
-          "Product strategy, prioritisation and roadmaps",
-          "Clear, testable requirements and shared understanding",
-          "AI-assisted rapid prototyping and iterative stakeholder validation"
+          "Product strategy, value propositions, prioritisation and outcome-led roadmaps",
+          "Discovery, current-state analysis, user needs and competitive landscape",
+          "Complex programme leadership, cross-team dependencies, release planning and estimation",
+          "Clear, testable requirements and shared understanding across business and engineering",
+          "AI-assisted rapid prototyping and iterative stakeholder validation",
+          "End-to-end delivery, product launch, adoption and benefits realisation"
         ],
         "evidence": [
           {
@@ -1772,7 +1774,7 @@ window.SITE = {
         ]
       },
       {
-        "group": "Design & modelling",
+        "group": "Discovery & design",
         "items": [
           [
             "Figma",
@@ -1791,15 +1793,20 @@ window.SITE = {
             ""
           ],
           [
+            "Mural",
+            ""
+          ]
+        ]
+      },
+      {
+        "group": "Architecture & modelling",
+        "items": [
+          [
             "Lucid",
             ""
           ],
           [
             "Visio",
-            ""
-          ],
-          [
-            "Mural",
             ""
           ],
           [
@@ -1817,15 +1824,11 @@ window.SITE = {
           [
             "BPMN",
             ""
-          ],
-          [
-            "MUI",
-            ""
           ]
         ]
       },
       {
-        "group": "Delivery & source control",
+        "group": "Programme & delivery",
         "items": [
           [
             "JIRA",
@@ -1854,200 +1857,12 @@ window.SITE = {
           [
             "Microsoft Project",
             ""
-          ],
-          [
-            "GitHub",
-            ""
-          ],
-          [
-            "Perforce",
-            ""
-          ],
-          [
-            "Jenkins",
-            ""
-          ],
-          [
-            "Review Board",
-            ""
           ]
         ]
       },
       {
-        "group": "Testing",
+        "group": "Languages & frameworks",
         "items": [
-          [
-            "JMeter",
-            ""
-          ],
-          [
-            "JUnit",
-            ""
-          ],
-          [
-            "TestNG",
-            ""
-          ],
-          [
-            "Selenium",
-            ""
-          ],
-          [
-            "TestRail",
-            ""
-          ],
-          [
-            "Testmo",
-            ""
-          ],
-          [
-            "Quality Centre",
-            ""
-          ],
-          [
-            "Postman",
-            ""
-          ],
-          [
-            "SoapUI",
-            ""
-          ]
-        ]
-      },
-      {
-        "group": "APIs & integration",
-        "items": [
-          [
-            "MuleSoft",
-            ""
-          ],
-          [
-            "Dell Boomi",
-            ""
-          ],
-          [
-            "Swagger",
-            ""
-          ],
-          [
-            "Stoplight",
-            ""
-          ],
-          [
-            "REST",
-            ""
-          ],
-          [
-            "SOAP",
-            ""
-          ],
-          [
-            "JSON",
-            ""
-          ],
-          [
-            "XML",
-            ""
-          ],
-          [
-            "Ab Initio",
-            ""
-          ],
-          [
-            "Tibco",
-            ""
-          ]
-        ]
-      },
-      {
-        "group": "Data & analytics",
-        "items": [
-          [
-            "Power BI",
-            ""
-          ],
-          [
-            "Tableau",
-            ""
-          ],
-          [
-            "Excel",
-            ""
-          ],
-          [
-            "Crystal Reports",
-            ""
-          ],
-          [
-            "Heap",
-            ""
-          ],
-          [
-            "SQL",
-            ""
-          ],
-          [
-            "PL/SQL",
-            ""
-          ],
-          [
-            "Oracle DB",
-            ""
-          ],
-          [
-            "SQL Server",
-            ""
-          ],
-          [
-            "DynamoDB",
-            ""
-          ],
-          [
-            "AWS Athena",
-            ""
-          ],
-          [
-            "MS Access",
-            ""
-          ]
-        ]
-      },
-      {
-        "group": "Observability",
-        "items": [
-          [
-            "Datadog",
-            ""
-          ],
-          [
-            "Zabbix",
-            ""
-          ]
-        ]
-      },
-      {
-        "group": "Cloud & engineering",
-        "items": [
-          [
-            "AWS",
-            ""
-          ],
-          [
-            "AWS Lambda",
-            ""
-          ],
-          [
-            "Azure",
-            ""
-          ],
-          [
-            "Skyscape",
-            ""
-          ],
-          [
-            "Rackspace",
-            ""
-          ],
           [
             "Java",
             ""
@@ -2105,7 +1920,201 @@ window.SITE = {
             ""
           ],
           [
+            "MUI",
+            ""
+          ],
+          [
             "ImageMagick",
+            ""
+          ]
+        ]
+      },
+      {
+        "group": "Source control & CI/CD",
+        "items": [
+          [
+            "GitHub",
+            ""
+          ],
+          [
+            "Perforce",
+            ""
+          ],
+          [
+            "Jenkins",
+            ""
+          ],
+          [
+            "Review Board",
+            ""
+          ]
+        ]
+      },
+      {
+        "group": "APIs & integration",
+        "items": [
+          [
+            "MuleSoft",
+            ""
+          ],
+          [
+            "Dell Boomi",
+            ""
+          ],
+          [
+            "Swagger",
+            ""
+          ],
+          [
+            "Stoplight",
+            ""
+          ],
+          [
+            "REST",
+            ""
+          ],
+          [
+            "SOAP",
+            ""
+          ],
+          [
+            "JSON",
+            ""
+          ],
+          [
+            "XML",
+            ""
+          ],
+          [
+            "Ab Initio",
+            ""
+          ],
+          [
+            "Tibco",
+            ""
+          ]
+        ]
+      },
+      {
+        "group": "Testing",
+        "items": [
+          [
+            "JMeter",
+            ""
+          ],
+          [
+            "JUnit",
+            ""
+          ],
+          [
+            "TestNG",
+            ""
+          ],
+          [
+            "Selenium",
+            ""
+          ],
+          [
+            "TestRail",
+            ""
+          ],
+          [
+            "Testmo",
+            ""
+          ],
+          [
+            "Quality Centre",
+            ""
+          ],
+          [
+            "Postman",
+            ""
+          ],
+          [
+            "SoapUI",
+            ""
+          ]
+        ]
+      },
+      {
+        "group": "Data & databases",
+        "items": [
+          [
+            "SQL",
+            ""
+          ],
+          [
+            "PL/SQL",
+            ""
+          ],
+          [
+            "Oracle DB",
+            ""
+          ],
+          [
+            "SQL Server",
+            ""
+          ],
+          [
+            "DynamoDB",
+            ""
+          ],
+          [
+            "MS Access",
+            ""
+          ]
+        ]
+      },
+      {
+        "group": "Analytics & reporting",
+        "items": [
+          [
+            "Power BI",
+            ""
+          ],
+          [
+            "Tableau",
+            ""
+          ],
+          [
+            "Excel",
+            ""
+          ],
+          [
+            "Crystal Reports",
+            ""
+          ],
+          [
+            "Heap",
+            ""
+          ],
+          [
+            "AWS Athena",
+            ""
+          ]
+        ]
+      },
+      {
+        "group": "Cloud & operating systems",
+        "items": [
+          [
+            "AWS",
+            ""
+          ],
+          [
+            "AWS Lambda",
+            ""
+          ],
+          [
+            "Azure",
+            ""
+          ],
+          [
+            "Skyscape",
+            ""
+          ],
+          [
+            "Rackspace",
             ""
           ],
           [
@@ -2176,6 +2185,19 @@ window.SITE = {
           ],
           [
             "Java Mobile Development Kit",
+            ""
+          ]
+        ]
+      },
+      {
+        "group": "Observability",
+        "items": [
+          [
+            "Datadog",
+            ""
+          ],
+          [
+            "Zabbix",
             ""
           ]
         ]
