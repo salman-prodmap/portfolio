@@ -70,7 +70,7 @@ window.SITE = {
     "title": "Hands-on Product Leader",
     "status": "",
     "resume": "assets/Salman-Abdul-Ghaffar-CV.pdf",
-    "resumeShort": "assets/Salman-Abdul-Ghaffar-One-Page-CV.pdf",
+    "resumeShort": "assets/Salman-Abdul-Ghaffar-Two-Page-CV.pdf",
     "email": "salman@prodmap.co.uk",
     "links": [
       {
@@ -1539,12 +1539,13 @@ window.SITE = {
         "title": "Product leadership & Enterprise delivery",
         "description": "Set product direction and lead complex delivery—from discovery and investment decisions to launch, scale and measurable outcomes.",
         "strengths": [
-          "Product strategy, value propositions, prioritisation and outcome-led roadmaps",
-          "Discovery, current-state analysis, user needs and competitive landscape",
-          "Complex programme leadership, cross-team dependencies, release planning and estimation",
+          "Product strategy, value propositions, prioritisation, outcome-led roadmaps and backlog management",
+          "Discovery, current-state analysis, user needs, competitive landscape and problem/solution visualisation",
+          "Innovation, AI-assisted rapid prototyping and iterative stakeholder validation",
+          "Complex programme management and leadership, cross-team dependencies, release planning and estimation",
           "Clear, testable requirements and shared understanding across business and engineering",
-          "AI-assisted rapid prototyping and iterative stakeholder validation",
-          "End-to-end delivery, product launch, adoption and benefits realisation"
+          "End-to-end delivery leadership, product launch, adoption and benefits realisation",
+          "Agile, hybrid and Waterfall delivery; SAFe, Scrum, Kanban, XP and Lean Six Sigma"
         ],
         "evidence": [
           {
@@ -1565,9 +1566,10 @@ window.SITE = {
         "title": "Stakeholder management & Commercial leadership",
         "description": "Align people and investment around the value a product can create.",
         "strengths": [
-          "Executive alignment, influencing and stakeholder engagement",
-          "Commercial decisions, value realisation and international launch",
-          "Client, supplier and offshore team relationships"
+          "Executive and CxO stakeholder management, engagement, alignment, communication and influencing",
+          "Cross-functional and offshore team leadership",
+          "Commercial awareness and decision-making, value realisation and international launch",
+          "Client-facing engagements and client, supplier and offshore team relationships"
         ],
         "evidence": [
           {
@@ -1588,10 +1590,11 @@ window.SITE = {
         "title": "Strategy, Analysis & Architecture",
         "description": "Connect business needs, data and technology to build products that work in practice.",
         "strengths": [
+          "Business analysis and architecture, systems and enterprise alignment",
           "AI-enabled products, automation and integrations",
           "AI skills: prompt engineering, prompt chaining and retrieval-augmented generation (RAG)",
-          "API platforms, data modelling and master data management",
-          "Enterprise architecture, target operating models and governance"
+          "API platforms, data analytics, data modelling and master data management",
+          "Enterprise architecture, target operating models and architecture governance"
         ],
         "evidence": [
           {
@@ -1613,8 +1616,9 @@ window.SITE = {
         "title": "Governance, Risk management & Quality assurance",
         "description": "Turn product decisions into reliable services, with quality designed into delivery.",
         "strengths": [
-          "Cross-functional team leadership and end-to-end delivery",
-          "Performance, resilience, scalability and security requirements",
+          "Governance, risk management and regulatory compliance (GDPR, PCI DSS)",
+          "Non-functional requirements: performance, resilience, scalability and security",
+          "Quality assurance, security and compliance audits",
           "UAT, operational acceptance and service transition"
         ],
         "evidence": [
@@ -1636,34 +1640,9 @@ window.SITE = {
     ],
     "industries": [
       {
-        "name": "Banking",
-        "detail": "Retail banking and loyalty platforms",
-        "icon": "assets/sector-icons/watercolour-v004/banking.svg"
-      },
-      {
-        "name": "Insurance",
-        "detail": "Underwriting, digital claims, integration and data migration",
-        "icon": "assets/sector-icons/watercolour-v004/insurance.svg"
-      },
-      {
-        "name": "Public services",
-        "detail": "Education, agriculture, licensing and regulation",
-        "icon": "assets/sector-icons/watercolour-v004/public-services.svg"
-      },
-      {
-        "name": "Telecommunications",
-        "detail": "Large-scale telecom products and platforms",
-        "icon": "assets/sector-icons/watercolour-v004/telecommunications.svg"
-      },
-      {
         "name": "Energy",
         "detail": "Electricity networks and enterprise analysis",
         "icon": "assets/sector-icons/watercolour-v004/energy.svg"
-      },
-      {
-        "name": "Social housing",
-        "detail": "IT strategy and architecture",
-        "icon": "assets/sector-icons/watercolour-v004/social-housing.svg"
       },
       {
         "name": "Pharmaceuticals",
@@ -1674,53 +1653,31 @@ window.SITE = {
         "name": "Retail",
         "detail": "Merchant offers and commercial platforms",
         "icon": "assets/sector-icons/watercolour-v004/retail.svg"
-      }
-    ],
-    "expertise": [
-      {
-        "group": "Product and Delivery",
-        "icon": "kanban",
-        "items": [
-          "SAFe, Scrum, Kanban, XP, Lean Six Sigma, Waterfall",
-          "Innovation, problem/solution visualisation",
-          "Complex programme management",
-          "Product strategy, roadmap and backlog management",
-          "End-to-end delivery leadership",
-          "Agile & hybrid delivery models"
-        ]
       },
       {
-        "group": "Stakeholder & Commercial Leadership",
-        "icon": "people",
-        "items": [
-          "Executive & CxO stakeholder management",
-          "Cross-functional & offshore team leadership",
-          "Commercial awareness and value realisation",
-          "Communication & influencing",
-          "Client-facing engagements"
-        ]
+        "name": "Telecommunications",
+        "detail": "Large-scale telecom products and platforms",
+        "icon": "assets/sector-icons/watercolour-v004/telecommunications.svg"
       },
       {
-        "group": "Strategy, Analysis & architecture",
-        "icon": "layers",
-        "items": [
-          "Business analysis & architecture",
-          "Systems & enterprise alignment",
-          "Data analytics & data modelling",
-          "Master data management",
-          "Target operating models",
-          "Architecture governance"
-        ]
+        "name": "Public services",
+        "detail": "Education, agriculture, licensing and regulation",
+        "icon": "assets/sector-icons/watercolour-v004/public-services.svg"
       },
       {
-        "group": "Governance, Risk & Quality",
-        "icon": "shield",
-        "items": [
-          "Regulatory & compliance (GDPR, PCI DSS)",
-          "Non-Functional Requirements",
-          "UAT & Operational acceptance",
-          "Security & Compliance audits"
-        ]
+        "name": "Social housing",
+        "detail": "IT strategy and architecture",
+        "icon": "assets/sector-icons/watercolour-v004/social-housing.svg"
+      },
+      {
+        "name": "Banking",
+        "detail": "Retail banking and loyalty platforms",
+        "icon": "assets/sector-icons/watercolour-v004/banking.svg"
+      },
+      {
+        "name": "Insurance",
+        "detail": "Underwriting, digital claims, integration and data migration",
+        "icon": "assets/sector-icons/watercolour-v004/insurance.svg"
       }
     ],
     "tools": [

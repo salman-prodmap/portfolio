@@ -1,3 +1,109 @@
+/* Keep the actual supplied image in place when opening capabilities from Home.
+   Rendering locally avoids file-URL fetch restrictions; real links remain fallbacks. */
+function portfolioInstallCapabilityNavigation(render) {
+  const homeURL = location.href, homeTitle = document.title;
+  const main = document.querySelector('main');
+  const homeMap = main.querySelector('.hero-capability-map img');
+  if (!homeMap) return;
+  const homeLink = homeMap.parentElement;
+  const headLinks = [...document.querySelectorAll('.rail a')].map(a => ({a,href:a.getAttribute('href'),current:a.getAttribute('aria-current')}));
+  const metadata = [...document.querySelectorAll('meta[name="description"],meta[property="og:title"],meta[property="og:description"],meta[property="og:url"],meta[name="twitter:title"],meta[name="twitter:description"],link[rel="canonical"]')].map(node => ({node,attribute:node.tagName==='LINK'?'href':'content',value:node.getAttribute(node.tagName==='LINK'?'href':'content')}));
+  let storedHome, active = false, homeScroll = 0;
+  const pixels = n => `${n}px`;
+  function alignMap(bounds) {
+    const map = main.querySelector('.capability-map-art');
+    map.style.left = '0px'; map.style.top = '0px';
+    const current = homeMap.getBoundingClientRect();
+    map.style.left = pixels(bounds.left-current.left);
+    map.style.top = pixels(bounds.top-current.top);
+  }
+  function showCapabilities(animate = true) {
+    if (active) return;
+    const bounds = homeMap.getBoundingClientRect();
+    const homeHero = main.querySelector('.new-hero');
+    const homeGrid = main.querySelector('.hero-layout');
+    const homeCopy = main.querySelector('.hero-copy');
+    const heroStyle = getComputedStyle(homeHero), gridStyle = getComputedStyle(homeGrid);
+    const geometry = {padding:heroStyle.padding,columns:gridStyle.gridTemplateColumns,gap:gridStyle.gap,
+      copyHeight:homeCopy.getBoundingClientRect().height,figureHeight:homeMap.closest('figure').getBoundingClientRect().height};
+    homeScroll = window.scrollY;
+    // Prepare off-DOM so a failed render leaves normal navigation available.
+    const template = document.createElement('template'); template.innerHTML = render();
+    const hero = template.content.querySelector('.capabilities-hero');
+    const grid = hero.querySelector('.capabilities-hero-layout');
+    const copy = grid.querySelector('.capabilities-hero-copy');
+    const map = grid.querySelector('.capability-map-art');
+    const back = hero.querySelector('.back');
+    back.textContent = 'Back to home'; back.href = homeURL;
+    const nav = hero.querySelector('.capabilities-nav'); nav.before(back);
+    hero.style.padding = geometry.padding;
+    hero.querySelector('.wrap').style.maxWidth = '1280px';
+    grid.style.gridTemplateColumns = geometry.columns; grid.style.gap = geometry.gap; grid.style.margin = '0';
+    copy.style.minHeight = pixels(geometry.copyHeight);
+    map.style.width = pixels(bounds.width); map.style.maxWidth = '100%';
+    map.style.height = pixels(geometry.figureHeight);
+    map.style.justifySelf = getComputedStyle(homeMap.closest('figure')).justifySelf;
+    map.replaceChildren(homeMap); // No copies, slices, assembly, or image animation.
+    storedHome = document.createDocumentFragment();
+    while(main.firstChild) storedHome.appendChild(main.firstChild);
+    document.body.dataset.page = 'specs'; document.body.dataset.capabilityArrival = 'true';
+    main.appendChild(template.content); active = true;
+    alignMap(bounds);
+    headLinks.forEach(({a,href}) => {
+      if(href.startsWith('#')) a.setAttribute('href',`index.html${href}`);
+      if(/specs\.html/.test(href)) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+    });
+    metadata.forEach(({node,attribute}) => {
+      if(attribute==='href' || node.getAttribute('property')==='og:url') node.setAttribute(attribute,'https://salman.prodmap.co.uk/specs.html');
+      else if((node.getAttribute('property')||node.getAttribute('name')||'').includes('title')) node.setAttribute(attribute,document.title);
+      else node.setAttribute(attribute,'Product leadership, architecture, business analysis and engineering capabilities, with industry experience, certifications and tools.');
+    });
+    const motion = document.documentElement.dataset.motionPreview==='true' || !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(animate && motion) main.classList.add('capability-arrival-fade');
+    main.addEventListener('animationend',()=>main.classList.remove('capability-arrival-fade'),{once:true});
+    const heading = copy.querySelector('h1'); heading.tabIndex=-1; heading.focus({preventScroll:true});
+  }
+  function showHome() {
+    if(!active) return;
+    homeLink.appendChild(homeMap);
+    main.replaceChildren(storedHome); main.classList.remove('capability-arrival-fade');
+    document.body.dataset.page='home'; delete document.body.dataset.capabilityArrival;
+    document.title=homeTitle;
+    headLinks.forEach(({a,href,current})=>{a.setAttribute('href',href);if(current===null)a.removeAttribute('aria-current');else a.setAttribute('aria-current',current);});
+    metadata.forEach(({node,attribute,value})=>node.setAttribute(attribute,value));
+    active=false; window.scrollTo({top:homeScroll,behavior:'instant'}); homeLink.focus({preventScroll:true});
+  }
+  // Some file: engines restrict history to the same pathname; retain a refreshable
+  // local hash route there. HTTPS uses the actual specs.html URL.
+  function pushCapabilities() {
+    const destination=new URL('specs.html',homeURL);
+    if(location.protocol==='file:' && new URLSearchParams(location.search).get('motion')==='on') destination.searchParams.set('motion','on');
+    try { history.pushState({portfolioCapabilityView:'specs'},'',destination.href); }
+    catch { history.pushState({portfolioCapabilityView:'specs'},'',new URL('#capabilities-view',homeURL).href); }
+  }
+  history.replaceState({...history.state,portfolioCapabilityView:'home'},'',location.href);
+  document.addEventListener('click',event=>{
+    if(event.defaultPrevented || event.button!==0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const link=event.target.closest('a'); if(!link || link.target==='_blank' || link.hasAttribute('download'))return;
+    if(!active && link.closest('.hero-capability-map')) {
+      event.preventDefault();
+      try { showCapabilities(); pushCapabilities(); }
+      catch(error) { console.error('Capability transition unavailable',error); location.assign(link.href); }
+    } else if(active && (link.classList.contains('back') || link.classList.contains('identity'))) {
+      event.preventDefault(); showHome(); history.pushState({portfolioCapabilityView:'home'},'',homeURL);
+    }
+  });
+  window.addEventListener('popstate',event=>{
+    if(event.state?.portfolioCapabilityView==='home')showHome();
+    else if(event.state?.portfolioCapabilityView==='specs')showCapabilities(false);
+  });
+  window.addEventListener('resize',()=>{
+    if(!active)return;
+    const grid=main.querySelector('.capabilities-hero-layout'),map=main.querySelector('.capability-map-art'),copy=main.querySelector('.capabilities-hero-copy');
+    grid.style.gridTemplateColumns='';map.style.left='';map.style.top='';map.style.width='';map.style.height='';map.style.justifySelf='';copy.style.minHeight='';
+  });
+  if(location.hash==='#capabilities-view') { showCapabilities(false); history.replaceState({portfolioCapabilityView:'specs'},'',location.href); }
+}
 /* Employment-first presentation. Evidence remains sourced from content/site.js. */
 window.portfolioActionIcon = function(name) {
   const paths = {
@@ -41,7 +147,7 @@ window.portfolioHeader = function(S, page) {
   return `<div class="header-inner"><a class="identity" href="${prefix}#top" aria-label="Salman Abdul Ghaffar, home"><span class="identity-name">Salman Abdul Ghaffar</span></a><nav aria-label="Main navigation"><a href="${prefix}#work" ${['case','cases'].includes(page)?'aria-current="page"':''}>Selected work</a><a href="${prefix}#approach" ${page==='approach'?'aria-current="page"':''}>Leadership</a><a href="${prefix}#changelog">Experience</a><a href="specs.html" ${page==='specs'?'aria-current="page"':''}>Capabilities</a></nav><a class="header-contact" href="${prefix}#contact">Contact me ${window.portfolioActionIcon("mail")}</a><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button></div><nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" hidden><a href="${prefix}#work">Selected work</a><a href="${prefix}#approach" ${page==='approach'?'aria-current="page"':''}>Leadership</a><a href="${prefix}#changelog">Experience</a><a href="specs.html">Capabilities</a><a href="${prefix}#contact">Contact</a></nav>`;
 };
 window.portfolioCVDownloads = function(person, className='quiet-link') {
-  return `<details class="cv-downloads"><summary class="${className}">Download CV ${window.portfolioActionIcon('download')}</summary><div class="cv-download-menu"><a href="${person.resumeShort}" download>One-page CV <small>PDF · Quick overview</small></a><a href="${person.resume}" download>Full CV <small>PDF · Detailed experience</small></a></div></details>`;
+  return `<details class="cv-downloads"><summary class="${className}">Download CV ${window.portfolioActionIcon('download')}</summary><div class="cv-download-menu"><a href="${person.resumeShort}" download>Two-page CV <small>PDF · Quick overview</small></a><a href="${person.resume}" download>Full CV <small>PDF · Detailed experience</small></a></div></details>`;
 };
 window.portfolioProductPreview = function(kind) {
  const toolbar=title=>`<div class="preview-toolbar"><span class="preview-window-dots" aria-hidden="true"><i></i><i></i><i></i></span><b>${title}</b><span class="preview-avatar" aria-hidden="true">S</span></div>`;
@@ -425,8 +531,8 @@ window.portfolioHome = function(S) {
     </div></section>
     <section class="capabilities-section" id="capabilities"><div class="wrap">
       <h2>What I bring.</h2>
-      <div class="capabilities-list">${sp.capabilities.map((g,i) => `<article class="capability-chapter"><div class="capability-heading"><div class="capability-heading-meta"><img class="capability-heading-icon" src="assets/capability-icons/watercolour-v002/${capabilityIcons[i]}.svg" width="48" height="48" alt="" aria-hidden="true"></div><h3>${g.titleLines?g.titleLines.join('<br>'):g.title}</h3>${g.focus?`<p class="capability-heading-focus">${g.focus}</p>`:''}</div><div class="capability-copy"><p>${g.description}</p><ul>${g.strengths.map(item => `<li>${item}</li>`).join('')}</ul><div class="capability-evidence">${links(g.evidence)}</div></div></article>`).join('')}</div>
-      <details class="capabilities-detail"><summary>Detailed expertise &amp; delivery methods</summary><div class="capabilities-detail-grid">${sp.expertise.map(g => `<div><h3>${g.group}</h3><ul>${g.items.map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('')}</div></details>
+      <div class="capabilities-list">${sp.capabilities.map((g,i) => `<article class="capability-chapter"><div class="capability-heading"><div class="capability-heading-meta"><img class="capability-heading-icon" src="assets/capability-icons/watercolour-v002/${capabilityIcons[i]}.svg" width="48" height="48" alt="" aria-hidden="true"></div><h3>${g.titleLines?g.titleLines.map(line=>`<span class="capability-heading-line">${line}</span>`).join(''):g.title}</h3>${g.focus?`<p class="capability-heading-focus">${g.focus}</p>`:''}</div><div class="capability-copy"><p>${g.description}</p><ul>${g.strengths.map(item => `<li>${item}</li>`).join('')}</ul><div class="capability-evidence">${links(g.evidence)}</div></div></article>`).join('')}</div>
+
     </div></section>
     <section class="capabilities-section" id="industries"><div class="wrap"><div class="capabilities-section-heading"><h2>Across eight industries.</h2></div>
       <div class="capabilities-industries">${sp.industries.map(g => `<article><img class="industry-icon" src="${g.icon}" alt="" width="56" height="56" loading="lazy"><h3>${g.name}</h3><p>${g.detail}</p></article>`).join('')}</div>
@@ -678,6 +784,10 @@ window.portfolioHome = function(S) {
     : page === 'approach' ? approachPage() : page === 'cases' ? casesPage() : page === 'specs' ? specsPage() : casePage())
     + `<footer><span>© ${new Date().getFullYear()} ${S.person.name}</span>${onHome ? '' : `<a href="${S.person.links[0].url}" target="_blank" rel="noopener">LinkedIn ${window.portfolioActionIcon("linkedin")}</a>`}</footer>`;
   main.innerHTML = normaliseCaseLinks(main.innerHTML);
+  }
+
+  if (onHome && typeof history !== 'undefined' && typeof getComputedStyle === 'function') {
+    portfolioInstallCapabilityNavigation(() => normaliseCaseLinks(specsPage()) + `<footer><span>© ${new Date().getFullYear()} ${S.person.name}</span><a href="${S.person.links[0].url}" target="_blank" rel="noopener">LinkedIn ${window.portfolioActionIcon('linkedin')}</a></footer>`);
   }
 
   /* Local-only review opt-in; public pages always follow the system preference. */
