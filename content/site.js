@@ -1536,7 +1536,7 @@ window.SITE = {
     "lead": "Product leadership, technical depth and a system for delivery.",
     "capabilities": [
       {
-        "title": "Product leadership & Enterprise delivery",
+        "title": "Product management & Delivery excellence",
         "description": "Set product direction and lead complex delivery—from discovery and investment decisions to launch, scale and measurable outcomes.",
         "strengths": [
           "Product strategy, value propositions, prioritisation, outcome-led roadmaps and backlog management",
@@ -1558,8 +1558,8 @@ window.SITE = {
           }
         ],
         "titleLines": [
-          "Product leadership",
-          "Enterprise delivery"
+          "Product management",
+          "Delivery excellence"
         ]
       },
       {
@@ -1592,7 +1592,7 @@ window.SITE = {
         "strengths": [
           "Business analysis and architecture, systems and enterprise alignment",
           "AI-enabled products, automation and integrations",
-          "AI skills: prompt engineering, prompt chaining and retrieval-augmented generation (RAG)",
+          "AI skills: AI agent skill authoring (SKILL.md), prompt engineering, prompt chaining and retrieval-augmented generation (RAG)",
           "API platforms, data analytics, data modelling and master data management",
           "Enterprise architecture, target operating models and architecture governance"
         ],
