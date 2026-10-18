@@ -1536,7 +1536,7 @@ window.SITE = {
     "lead": "Product leadership, technical depth and a system for delivery.",
     "capabilities": [
       {
-        "title": "Product and Delivery",
+        "title": "Product leadership & Enterprise delivery",
         "description": "Set product direction and lead complex delivery—from discovery and investment decisions to launch, scale and measurable outcomes.",
         "strengths": [
           "Product strategy, value propositions, prioritisation and outcome-led roadmaps",
@@ -1555,10 +1555,14 @@ window.SITE = {
             "label": "Reward platform",
             "href": "case.html?id=reward-gmm"
           }
+        ],
+        "titleLines": [
+          "Product leadership",
+          "Enterprise delivery"
         ]
       },
       {
-        "title": "Stakeholder & Commercial Leadership",
+        "title": "Stakeholder management & Commercial leadership",
         "description": "Align people and investment around the value a product can create.",
         "strengths": [
           "Executive alignment, influencing and stakeholder engagement",
@@ -1574,10 +1578,14 @@ window.SITE = {
             "label": "Experience",
             "href": "index.html#changelog"
           }
+        ],
+        "titleLines": [
+          "Stakeholder management",
+          "Commercial leadership"
         ]
       },
       {
-        "title": "Strategy, Analysis & architecture",
+        "title": "Strategy, Analysis & Architecture",
         "description": "Connect business needs, data and technology to build products that work in practice.",
         "strengths": [
           "AI-enabled products, automation and integrations",
@@ -1594,10 +1602,15 @@ window.SITE = {
             "label": "API platform case study",
             "href": "case.html?id=reward-gmm"
           }
+        ],
+        "titleLines": [
+          "Strategy",
+          "Analysis",
+          "Architecture"
         ]
       },
       {
-        "title": "Governance, Risk & Quality",
+        "title": "Governance, Risk management & Quality assurance",
         "description": "Turn product decisions into reliable services, with quality designed into delivery.",
         "strengths": [
           "Cross-functional team leadership and end-to-end delivery",
@@ -1614,49 +1627,53 @@ window.SITE = {
             "href": "case.html?id=olcs"
           }
         ],
-        "focus": "Operational readiness"
+        "titleLines": [
+          "Governance",
+          "Risk management",
+          "Quality assurance"
+        ]
       }
     ],
     "industries": [
       {
         "name": "Banking",
         "detail": "Retail banking and loyalty platforms",
-        "icon": "assets/sector-icons/watercolour-v003/banking.svg"
+        "icon": "assets/sector-icons/watercolour-v004/banking.svg"
       },
       {
         "name": "Insurance",
         "detail": "Underwriting, digital claims, integration and data migration",
-        "icon": "assets/sector-icons/watercolour-v003/insurance.svg"
+        "icon": "assets/sector-icons/watercolour-v004/insurance.svg"
       },
       {
         "name": "Public services",
         "detail": "Education, agriculture, licensing and regulation",
-        "icon": "assets/sector-icons/watercolour-v003/public-services.svg"
+        "icon": "assets/sector-icons/watercolour-v004/public-services.svg"
       },
       {
         "name": "Telecommunications",
         "detail": "Large-scale telecom products and platforms",
-        "icon": "assets/sector-icons/watercolour-v003/telecommunications.svg"
+        "icon": "assets/sector-icons/watercolour-v004/telecommunications.svg"
       },
       {
         "name": "Energy",
         "detail": "Electricity networks and enterprise analysis",
-        "icon": "assets/sector-icons/watercolour-v003/energy.svg"
+        "icon": "assets/sector-icons/watercolour-v004/energy.svg"
       },
       {
         "name": "Social housing",
         "detail": "IT strategy and architecture",
-        "icon": "assets/sector-icons/watercolour-v003/social-housing.svg"
+        "icon": "assets/sector-icons/watercolour-v004/social-housing.svg"
       },
       {
         "name": "Pharmaceuticals",
         "detail": "Global analytics and account intelligence",
-        "icon": "assets/sector-icons/watercolour-v003/pharmaceuticals.svg"
+        "icon": "assets/sector-icons/watercolour-v004/pharmaceuticals.svg"
       },
       {
         "name": "Retail",
         "detail": "Merchant offers and commercial platforms",
-        "icon": "assets/sector-icons/watercolour-v003/retail.svg"
+        "icon": "assets/sector-icons/watercolour-v004/retail.svg"
       }
     ],
     "expertise": [
