@@ -144,7 +144,7 @@ window.SITE = {
       ],
       "layout": "v2",
       "label": "Case study · Fintech",
-      "logo": "assets/logos/reward-transparent-v001.png",
+      "logo": "assets/logos/reward-transparent-v001.webp",
       "heroStats": [
         [
           "£1M+",
@@ -283,7 +283,7 @@ window.SITE = {
       ],
       "layout": "v2",
       "label": "Case study · Fintech operations",
-      "logo": "assets/logos/reward-transparent-v001.png",
+      "logo": "assets/logos/reward-transparent-v001.webp",
       "heroStats": [
         [
           "80%",
@@ -1046,7 +1046,7 @@ window.SITE = {
       "role": "Senior Product Manager",
       "company": "Reward",
       "contract": true,
-      "logo": "assets/logos/reward-transparent-v001.png",
+      "logo": "assets/logos/reward-transparent-v001.webp",
       "cases": [
         "reward-gmm",
         "service-hive"
