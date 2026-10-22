@@ -173,7 +173,7 @@ window.portfolioSummaryYears = function(dateRange='') {
 };
 window.portfolioCaseCard = function(c, presentation={}) {
  const icon=window.portfolioActionIcon;
- return `<article class="project-card ${presentation.visual?'project-card-illustrated':''}">${presentation.visual?`<div class="project-card-visual ${presentation.type||''}">${presentation.visual}</div>`:''}<div class="project-card-body"><p class="project-card-meta">${[c.company,window.portfolioSummaryYears(c.year)].filter(Boolean).join(' · ')}</p><h3>${presentation.title||c.title}</h3>${presentation.description?`<p class="project-card-description">${presentation.description}</p>`:''}${c.metric?`<div class="project-card-metric"><b>${c.metric[0]}</b><span>${c.metric[1]}</span></div>`:''}<a class="project-card-link" href="case.html?id=${encodeURIComponent(c.id)}" aria-label="Read the case study: ${(presentation.title||c.title).replace(/"/g,'&quot;')}">Read the case study</a></div></article>`;
+ return `<article class="project-card ${presentation.visual?'project-card-illustrated':''}">${presentation.visual?`<div class="project-card-visual ${presentation.type||''}">${presentation.visual}</div>`:''}<div class="project-card-body"><div class="project-card-identity">${c.logo?`<img class="project-card-logo" src="${encodeURI(c.logo)}" alt="" width="64" height="48" loading="lazy" decoding="async">`:""}<p class="project-card-meta">${[c.company,window.portfolioSummaryYears(c.year)].filter(Boolean).join(' · ')}</p></div><h3>${presentation.title||c.title}</h3>${presentation.description?`<p class="project-card-description">${presentation.description}</p>`:''}${c.metric?`<div class="project-card-metric"><b>${c.metric[0]}</b><span>${c.metric[1]}</span></div>`:''}<a class="project-card-link" href="case.html?id=${encodeURIComponent(c.id)}" aria-label="Read the case study: ${(presentation.title||c.title).replace(/"/g,'&quot;')}">Read the case study</a></div></article>`;
 };
 window.portfolioRecommendations = function(reviews) {
   const escape = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
@@ -631,12 +631,12 @@ window.portfolioHome = function(S) {
       ${tags(c.tags)}
     </div><div class="case-company-identity">
       ${c.logo ? `<img src="${encodeURI(c.logo)}" alt="">` : ''}
-      <b>${c.company}</b>
+      <b>${c.identityLabel || c.company}</b>
     </div></div>`;
   }
 
   function casePageV2(c, next) {
-    const editorialClass = {'reward-gmm':'gmm-case',olcs:'doe-case','liberty-equine':'liberty-case','service-hive':'hive-case'}[c.id];
+    const editorialClass = {'reward-gmm':'gmm-case',olcs:'doe-case','liberty-equine':'liberty-case','service-hive':'hive-case','hr-coc':'coc-case'}[c.id];
     const caseClass = editorialClass ? `${editorialClass} editorial-case` : '';
     const blockText = b => [].concat(b.p).map(t => t.trim().startsWith('<') ? t : `<p>${t}</p>`).join('');
     const isLong = b => [].concat(b.p).join(' ').replace(/<[^>]+>/g, '').length > 520 || [].concat(b.p).some(t => /<(ol|ul)\b/.test(t));
@@ -648,6 +648,7 @@ window.portfolioHome = function(S) {
       'service-hive':['Current situation','Key decisions','Results','What I learned'],
       'liberty-equine':['The challenge','Automated rating removed the two-expert bottleneck','Outcomes','What I learned'],
       'copyrite-genuscan':['About the project','From an idea to a product','Results','What I learned'],
+      'hr-coc':['The challenge','Key decisions','Outcomes','What I learned'],
       olcs:['The business challenge','Established a repeatable path from policy to delivery','Results and leadership impact','Lessons learned']
     };
     const labels = ['Challenge','Decisions','Outcomes','Lessons'];
@@ -668,6 +669,7 @@ window.portfolioHome = function(S) {
       <div class="wrap">
         <a class="back" href="cases.html">${window.portfolioActionIcon('left')} All case studies</a>
         ${caseHeading(c)}
+        ${c.intro ? `<p class="lede coc-intro">${c.intro}</p>` : ''}
         ${c.heroStats ? `<div class="cs2-hero">${c.heroStats.map(([v, l]) => `<div><b>${v}</b><p>${l}</p></div>`).join('')}</div>` : ''}
         ${c.facts ? `<div class="cs2-facts">${c.facts.map(([v, l]) => `<div><b>${v}</b><span>${l}</span></div>`).join('')}</div>` : ''}
         ${c.partners ? `
@@ -690,7 +692,7 @@ window.portfolioHome = function(S) {
     <section class="cs2-story-sec ${caseClass}">
       <div class="wrap">
         <div class="cs2-story-head">
-          <h2>${c.id === 'reward-gmm' ? 'From concept to global platform' : c.id === 'olcs' ? 'From complex policy to a clearer service' : c.id === 'liberty-equine' ? 'From manual underwriting to a broker product' : c.id === 'service-hive' ? 'From fragmented support to global servicing' : 'The full story'}</h2>
+          <h2>${c.id === 'reward-gmm' ? 'From concept to global platform' : c.id === 'olcs' ? 'From complex policy to a clearer service' : c.id === 'liberty-equine' ? 'From manual underwriting to a broker product' : c.id === 'service-hive' ? 'From fragmented support to global servicing' : c.id === 'hr-coc' ? 'From manual tracking to intelligent automation' : 'The full story'}</h2>
           ${!editorialClass?`<button type="button" class="cs2-toggle" aria-expanded="true" aria-controls="cs2-story">
             <span class="lbl-more">Read the full story</span><span class="lbl-less">Hide the full story</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
@@ -976,3 +978,6 @@ window.portfolioHome = function(S) {
   }
 })();
 
+
+/* CoC illustration expansion is local to pages with release images. */
+(()=>{if(document.body.dataset.caseId!=='hr-coc')return;const triggers=document.querySelectorAll('[data-coc-image]');if(!triggers.length)return;const dialog=document.createElement('dialog');dialog.className='coc-image-dialog';dialog.setAttribute('aria-label','Expanded release illustration');dialog.innerHTML='<div class="coc-dialog-head"><p></p><button type="button">Close</button></div><img alt="">';document.body.append(dialog);let opener=null,overflow='';const image=dialog.querySelector('img'),title=dialog.querySelector('p'),close=dialog.querySelector('button');triggers.forEach(button=>button.addEventListener('click',()=>{opener=button;image.src=button.dataset.cocImage;image.alt=button.querySelector('img').alt;title.textContent=button.dataset.cocTitle;overflow=document.body.style.overflow;dialog.showModal();document.body.style.overflow='hidden';close.focus()}));close.addEventListener('click',()=>dialog.close());dialog.addEventListener('close',()=>{document.body.style.overflow=overflow;opener?.focus({preventScroll:true})});})();

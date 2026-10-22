@@ -1,4 +1,4 @@
-/* Public portfolio content; CV reconciliation selection, 11 October 2026. */
+/* Public portfolio content; local CoC compact-caption v3. */
 window.SITE = {
   "sections": [
     {
@@ -867,6 +867,85 @@ window.SITE = {
         "name": "Aditya Kawatkar",
         "role": "Senior Test Consultant, EY"
       }
+    },
+    {
+      "id": "hr-coc",
+      "short": "Employee changes",
+      "home": false,
+      "title": "Intelligently automating employee changes with AI and deterministic rules",
+      "company": "A global company operating across 20 jurisdictions",
+      "role": "Product leadership, business analysis and solution design",
+      "tags": [
+        "HR operations",
+        "AI",
+        "Deterministic automation"
+      ],
+      "layout": "v2",
+      "label": "Case study · HR operations",
+      "intro": "Eight releases shaped by HR feedback, from manual tracking to AI intake and automated reconciliation.",
+      "summary": "Kept email intake familiar while improving execution through eight releases, with HR review retained.",
+      "story": [
+        {
+          "h": "Executive summary",
+          "p": "Employee changes arrived by email, while HR copied details and tracked tasks across spreadsheet tabs. I worked with senior HR and technical stakeholders to improve execution incrementally. We began with a checklist people could use and refine, then added AI intake, connected systems and deterministic reconciliation."
+        },
+        {
+          "h": "The challenge",
+          "p": [
+            "Changes to salary, manager, department and working patterns could require multiple requests and repeated entry across systems. Follow-up conversations, signing and document filing added separate work.",
+            "The delivery constraint was to improve the service while retaining familiar email intake. Each increment needed to be useful to HR without waiting for a complete replacement of the process."
+          ]
+        },
+        {
+          "h": "My contribution",
+          "p": [
+            "I combined product leadership, business analysis, service design and solution architecture: shaping the problem, developing prototypes, defining requirements and working through integration decisions with HR and technical stakeholders.",
+            "I used AI-assisted prototypes for early user testing, evaluated models with anonymised production-email scenarios and supported UAT and HR training. I personally designed and wrote the deterministic reconciliation algorithm introduced in Release 8."
+          ]
+        },
+        {
+          "h": "Key decisions",
+          "p": "<ul class=\"cs-list\"><li><b>Keep the entry point familiar.</b> Improve the work behind the inbox while employees continue to use email.</li><li><b>Start with a usable workflow.</b> Put structured checklists in HR’s hands and use their feedback to refine the process before adding deeper automation.</li><li><b>Give AI a defined job.</b> Use classification and extraction to prepare requests for review. Match known department values against controlled lists using deterministic logic.</li><li><b>Test the difficult emails.</b> Investigate low-confidence results. Distinguishing effective dates from applied dates addressed one source of extraction confusion.</li><li><b>Connect the steps incrementally.</b> Add employee-record updates, signatures and document storage as separate improvements. Retain HR review when reconciling previous and new requests.</li></ul>"
+        },
+        {
+          "h": "Eight releases",
+          "p": "<nav class=\"coc-release-nav\" aria-label=\"Jump to a release\"><a href=\"#release-1\">Release 1</a><a href=\"#release-2\">Release 2</a><a href=\"#release-3\">Release 3</a><a href=\"#release-4\">Release 4</a><a href=\"#release-5\">Release 5</a><a href=\"#release-6\">Release 6</a><a href=\"#release-7\">Release 7</a><a href=\"#release-8\">Release 8</a></nav><p class=\"coc-image-note\">The images are anonymised illustrative reconstructions. Fields, controls and statuses are examples.</p><div class=\"coc-releases\"><section class=\"coc-release\" id=\"release-1\" aria-labelledby=\"release-title-1\"><h4 id=\"release-title-1\">Single-change workflow<span>Release 1</span></h4><div class=\"coc-release-copy\"><p><b>Before</b> HR received requests by email, copied the details and tracked tasks across spreadsheet tabs.</p><p><b>Released</b> Structured tasks and a digital checklist for one employee change request.</p><p><b>For HR</b> HR could try the checklists in practice and give early feedback, helping us improve their structure.</p></div><figure><button type=\"button\" class=\"coc-image-button\" data-coc-image=\"assets/coc-local/coc-release-01-white-v3.webp\" data-coc-title=\"Release 1: Single-change workflow\" aria-label=\"Enlarge the before and after illustration for Release 1\" aria-haspopup=\"dialog\"><img src=\"assets/coc-local/coc-release-01-white-v3.webp\" width=\"2160\" height=\"1032\" alt=\"HR received requests by email, copied the details and tracked tasks across spreadsheet tabs. After: Structured tasks and a digital checklist for one employee change request.\" loading=\"lazy\" decoding=\"async\"></button></figure></section><section class=\"coc-release\" id=\"release-2\" aria-labelledby=\"release-title-2\"><h4 id=\"release-title-2\">Multiple-change workflow<span>Release 2</span></h4><div class=\"coc-release-copy\"><p><b>Before</b> A manager change and a salary change required two separate requests, each with its own checklist.</p><p><b>Released</b> Multiple changes in one workflow, with Manager and Salary stages on the left and the selected checklist on the right.</p><p><b>For HR</b> HR could manage related changes together instead of creating and tracking separate requests.</p></div><figure><button type=\"button\" class=\"coc-image-button\" data-coc-image=\"assets/coc-local/coc-release-02-white-v3.webp\" data-coc-title=\"Release 2: Multiple-change workflow\" aria-label=\"Enlarge the before and after illustration for Release 2\" aria-haspopup=\"dialog\"><img src=\"assets/coc-local/coc-release-02-white-v3.webp\" width=\"2160\" height=\"888\" alt=\"A manager change and a salary change required two separate requests, each with its own checklist. After: Multiple changes in one workflow, with Manager and Salary stages on the left and the selected checklist on the right.\" loading=\"lazy\" decoding=\"async\"></button></figure></section><section class=\"coc-release\" id=\"release-3\" aria-labelledby=\"release-title-3\"><h4 id=\"release-title-3\">AI-assisted email intake<span>Release 3</span></h4><div class=\"coc-release-copy\"><p><b>Before</b> HR read incoming emails, identified the changes and copied the details into the workflow.</p><p><b>Released</b> AI reads emails from the HR inbox, classifies and branches by request type, extracts details and creates workflows automatically.</p><p><b>For HR</b> HR reviews the prepared request details instead of entering everything manually. Employees continue to use email.</p></div><figure><button type=\"button\" class=\"coc-image-button\" data-coc-image=\"assets/coc-local/coc-release-03-white-v3.webp\" data-coc-title=\"Release 3: AI-assisted email intake\" aria-label=\"Enlarge the before and after illustration for Release 3\" aria-haspopup=\"dialog\"><img src=\"assets/coc-local/coc-release-03-white-v3.webp\" width=\"2160\" height=\"993\" alt=\"HR read incoming emails, identified the changes and copied the details into the workflow. After: AI reads emails from the HR inbox, classifies and branches by request type, extracts details and creates workflows automatically.\" loading=\"lazy\" decoding=\"async\"></button></figure></section><section class=\"coc-release\" id=\"release-4\" aria-labelledby=\"release-title-4\"><h4 id=\"release-title-4\">Follow-up handling<span>Release 4</span></h4><div class=\"coc-release-copy\"><p><b>Before</b> HR had to match separate email replies to the request and search the inbox for the conversation.</p><p><b>Released</b> Email-thread recognition links follow-up replies to the existing workflow.</p><p><b>For HR</b> HR can see the original email and subsequent replies together alongside the request.</p></div><figure><button type=\"button\" class=\"coc-image-button\" data-coc-image=\"assets/coc-local/coc-release-04-white-v3.webp\" data-coc-title=\"Release 4: Follow-up handling\" aria-label=\"Enlarge the before and after illustration for Release 4\" aria-haspopup=\"dialog\"><img src=\"assets/coc-local/coc-release-04-white-v3.webp\" width=\"2160\" height=\"1035\" alt=\"HR had to match separate email replies to the request and search the inbox for the conversation. After: Email-thread recognition links follow-up replies to the existing workflow.\" loading=\"lazy\" decoding=\"async\"></button></figure></section><section class=\"coc-release\" id=\"release-5\" aria-labelledby=\"release-title-5\"><h4 id=\"release-title-5\">Employee-record updates<span>Release 5</span></h4><div class=\"coc-release-copy\"><p><b>Before</b> HR switched to the HR system and entered employee changes separately.</p><p><b>Released</b> HR-system integration enables employee records to be updated directly from within the workflow.</p><p><b>For HR</b> HR can apply the employee changes from the workflow without entering them separately in the HR system.</p></div><figure><button type=\"button\" class=\"coc-image-button\" data-coc-image=\"assets/coc-local/coc-release-05-white-v3.webp\" data-coc-title=\"Release 5: Employee-record updates\" aria-label=\"Enlarge the before and after illustration for Release 5\" aria-haspopup=\"dialog\"><img src=\"assets/coc-local/coc-release-05-white-v3.webp\" width=\"2160\" height=\"1052\" alt=\"HR switched to the HR system and entered employee changes separately. After: HR-system integration enables employee records to be updated directly from within the workflow.\" loading=\"lazy\" decoding=\"async\"></button></figure></section><section class=\"coc-release\" id=\"release-6\" aria-labelledby=\"release-title-6\"><h4 id=\"release-title-6\">e-signature service integration<span>Release 6</span></h4><div class=\"coc-release-copy\"><p><b>Before</b> HR arranged signatures separately and tracked and retrieved the signed copy.</p><p><b>Released</b> Documents go from the workflow to e-signature service for employee signature, then return to the workflow.</p><p><b>For HR</b> HR can manage signing and receive the signed document within the same workflow.</p></div><figure><button type=\"button\" class=\"coc-image-button\" data-coc-image=\"assets/coc-local/coc-release-06-white-v3.webp\" data-coc-title=\"Release 6: e-signature service integration\" aria-label=\"Enlarge the before and after illustration for Release 6\" aria-haspopup=\"dialog\"><img src=\"assets/coc-local/coc-release-06-white-v3.webp\" width=\"2160\" height=\"1016\" alt=\"HR arranged signatures separately and tracked and retrieved the signed copy. After: Documents go from the workflow to e-signature service for employee signature, then return to the workflow.\" loading=\"lazy\" decoding=\"async\"></button></figure></section><section class=\"coc-release\" id=\"release-7\" aria-labelledby=\"release-title-7\"><h4 id=\"release-title-7\">Document storage integration<span>Release 7</span></h4><div class=\"coc-release-copy\"><p><b>Before</b> Signed documents returned to the workflow, but HR still filed them manually in document management.</p><p><b>Released</b> The workflow automatically stores the signed document in the document management system.</p><p><b>For HR</b> HR no longer needs a separate manual filing step for the signed document.</p></div><figure><button type=\"button\" class=\"coc-image-button\" data-coc-image=\"assets/coc-local/coc-release-07-white-v3.webp\" data-coc-title=\"Release 7: Document storage integration\" aria-label=\"Enlarge the before and after illustration for Release 7\" aria-haspopup=\"dialog\"><img src=\"assets/coc-local/coc-release-07-white-v3.webp\" width=\"2160\" height=\"1016\" alt=\"Signed documents returned to the workflow, but HR still filed them manually in document management. After: The workflow automatically stores the signed document in the document management system.\" loading=\"lazy\" decoding=\"async\"></button></figure></section><section class=\"coc-release\" id=\"release-8\" aria-labelledby=\"release-title-8\"><h4 id=\"release-title-8\">Intelligent automation<span>Release 8</span></h4><div class=\"coc-release-copy\"><p><b>Before</b> HR reviewed previous and new requests and reconciled related changes manually.</p><p><b>Released</b> A deterministic algorithm combines previous and new requests into a reconciled workflow, ready for HR review.</p><p><b>For HR</b> HR reviews the reconciled workflow after the algorithm has brought the related changes together.</p><p class=\"coc-personal-contribution\">I personally designed and wrote this deterministic algorithm. HR review remains the final step. The checkmarks illustrate reconciliation, not completed employee changes.</p></div><figure><button type=\"button\" class=\"coc-image-button\" data-coc-image=\"assets/coc-local/coc-release-08-white-v3.webp\" data-coc-title=\"Release 8: Intelligent automation\" aria-label=\"Enlarge the before and after illustration for Release 8\" aria-haspopup=\"dialog\"><img src=\"assets/coc-local/coc-release-08-white-v3.webp\" width=\"2160\" height=\"1053\" alt=\"Previous and new requests pass through deterministic rules into a reconciled workflow, followed by HR review.\" loading=\"lazy\" decoding=\"async\"></button></figure></section></div>"
+        },
+        {
+          "h": "Outcomes",
+          "p": [
+            "The CoC solution released 1,000 hours of annual capacity. AI prepared request details for HR review, while integrations enabled employee-record updates, signatures and document filing within the workflow.",
+            "Related changes and follow-up conversations were brought together. The final release added deterministic reconciliation of previous and new requests, leaving HR to review the prepared workflow."
+          ]
+        },
+        {
+          "h": "What I learned",
+          "p": [
+            "Early value came from improving a step that HR could use and respond to. That feedback provided a concrete basis for the next release.",
+            "AI and deterministic logic served different purposes. Classification and extraction handled unstructured email, controlled-list matching handled known values, and a separate algorithm reconciled related requests. Keeping those responsibilities distinct made the design easier to explain and test."
+          ]
+        }
+      ],
+      "heroStats": [
+        [
+          "1,000",
+          "hours of annual capacity released"
+        ],
+        [
+          "8",
+          "incremental releases shaped by HR feedback"
+        ],
+        [
+          "20",
+          "jurisdictions in the organisation’s operating footprint"
+        ]
+      ],
+      "logo": "assets/coc-local/hr-transformation-approved-v1.svg",
+      "identityLabel": "HR Transformation",
+      "metric": [
+        "1,000",
+        "hours of annual capacity released"
+      ]
     }
   ],
   "changelogHeading": "My career",
