@@ -1290,3 +1290,6 @@ body[data-page="specs"] :is(.capabilities-industries,.capabilities-detail-grid) 
 .project-card-identity{display:flex;align-items:center;gap:14px;min-height:48px;margin-bottom:18px}.project-card-identity .project-card-logo{display:block;width:64px;height:48px;object-fit:contain;flex:none}.project-card-identity .project-card-meta{margin:0;min-width:0;line-height:1.6}.project-card-identity+.project-card-description{margin-top:0}@media(max-width:640px){.project-card-identity{gap:12px;margin-bottom:16px}.project-card-identity .project-card-logo{width:54px;height:42px}}
 
 @media(max-width:640px){.coc-case .cs2-hero div:first-child{grid-column:1/-1}}
+
+/* Reward ecosystem diagram: half the original 800px display width. */
+body[data-page="case"] .gmm-story-visual .loyalty-platform-visual{width:100%;max-width:400px;margin-inline:auto}

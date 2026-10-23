@@ -665,7 +665,7 @@ window.portfolioHome = function(S) {
     }
     return `
     <div class="case-reading-layout"><aside class="case-contents" aria-label="Case study contents"><nav class="case-contents-desktop" aria-label="On this page"><p>On this page</p>${contentsLinks()}</nav><details class="case-contents-mobile"><summary>On this page</summary><nav aria-label="On this page">${contentsLinks()}</nav></details></aside><div class="case-reading-content">
-    <section class="cs2-head ${caseClass}" id="case-overview" tabindex="-1">
+    <section class="cs2-head ${caseClass} animator-case-overview" id="case-overview" tabindex="-1">
       <div class="wrap">
         <a class="back" href="cases.html">${window.portfolioActionIcon('left')} All case studies</a>
         ${caseHeading(c)}
