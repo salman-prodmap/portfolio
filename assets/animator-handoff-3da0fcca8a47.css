@@ -1,0 +1,51 @@
+/* Animator handoff: restrained editorial motion for the portfolio homepage. */
+:root { --anim-ease: cubic-bezier(.22,.7,.2,1); }
+
+@keyframes animator-rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+
+.animator-reveal { opacity: 0; transform: translateY(22px); }
+.animator-reveal.is-visible { animation: animator-rise 720ms var(--anim-ease) both; }
+.animator-reveal[data-anim-delay="1"].is-visible { animation-delay: 100ms; }
+.animator-reveal[data-anim-delay="2"].is-visible { animation-delay: 180ms; }
+.animator-reveal[data-anim-delay="3"].is-visible { animation-delay: 260ms; }
+
+/* Keep the loyalty-platform diagram supportive, not dominant, in the story. */
+body[data-page="case"] .gmm-story-visual .loyalty-platform-visual { width: 100%; max-width: 400px; margin-left: auto; margin-right: auto; }
+
+
+/* Shared case-study overview entrance. */
+.cs2-head.animator-case-overview .case-heading-copy > *,
+.cs2-head.animator-case-overview .case-company-identity,
+.cs2-head.animator-case-overview .coc-intro,
+.cs2-head.animator-case-overview .cs2-hero { opacity: 0; animation: animator-rise 620ms var(--anim-ease) both; }
+.cs2-head.animator-case-overview .case-heading-copy .cs2-label { animation-delay: 80ms; }
+.cs2-head.animator-case-overview .case-heading-copy h1 { animation-delay: 150ms; }
+.cs2-head.animator-case-overview .case-heading-copy .case-role-date { animation-delay: 230ms; }
+.cs2-head.animator-case-overview .case-heading-copy .tags { animation-delay: 300ms; }
+.cs2-head.animator-case-overview .case-company-identity { animation-delay: 220ms; }
+.cs2-head.animator-case-overview .cs2-hero { animation-delay: 390ms; }
+.cs2-head.animator-case-overview .cs2-hero > div { opacity: 0; animation: animator-rise 520ms var(--anim-ease) both; }
+.cs2-head.animator-case-overview .cs2-hero > div:nth-child(1) { animation-delay: 510ms; }
+.cs2-head.animator-case-overview .cs2-hero > div:nth-child(2) { animation-delay: 590ms; }
+.cs2-head.animator-case-overview .cs2-hero > div:nth-child(3) { animation-delay: 670ms; }
+
+.now-section.animator-reveal.is-visible .now-layout > div { animation: animator-rise 720ms var(--anim-ease) both; }
+.now-section.animator-reveal.is-visible .now-layout > div:nth-child(2) { animation-delay: 140ms; }
+.now-section.animator-reveal.is-visible .now-benefit { animation: animator-rise 560ms var(--anim-ease) both; }
+.now-section.animator-reveal.is-visible .now-benefit:nth-child(1) { animation-delay: 260ms; }
+.now-section.animator-reveal.is-visible .now-benefit:nth-child(2) { animation-delay: 360ms; }
+.now-section.animator-reveal.is-visible .now-benefit:nth-child(3) { animation-delay: 460ms; }
+.now-section.animator-reveal.is-visible .now-divider { animation: animator-line 700ms ease-out 460ms both; transform-origin: left; }
+@keyframes animator-line { from { transform: scaleX(0); opacity: .2; } to { transform: scaleX(1); opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .animator-reveal, .animator-reveal.is-visible { opacity: 1; transform: none; animation: none; }
+      .cs2-head.animator-case-overview .case-heading-copy > *,
+  .cs2-head.animator-case-overview .case-company-identity,
+  .cs2-head.animator-case-overview .coc-intro,
+  .cs2-head.animator-case-overview .cs2-hero,
+  .cs2-head.animator-case-overview .cs2-hero > div { opacity: 1; animation: none; transform: none; }
+  .now-section.animator-reveal.is-visible .now-layout > div,
+  .now-section.animator-reveal.is-visible .now-benefit,
+  .now-section.animator-reveal.is-visible .now-divider { animation: none; transform: none; opacity: 1; }
+}
