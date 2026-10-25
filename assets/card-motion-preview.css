@@ -1,0 +1,11 @@
+/* Local review: restrained entrances and interactive card feedback. */
+@keyframes portfolio-card-arrive{from{opacity:.15;translate:0 18px}to{opacity:1;translate:0 0}}
+body[data-page="cases"] .project-card.card-motion-enter,.gallery-page .sample.card-motion-enter{animation:portfolio-card-arrive 650ms cubic-bezier(.22,.7,.2,1) var(--card-motion-delay,0ms) both}
+body[data-page="cases"] .project-card{transition:transform 180ms ease,border-color 180ms ease,box-shadow 180ms ease}
+.gallery-page .sample-link .art{transition:transform 180ms ease,box-shadow 180ms ease}
+.gallery-page .sample-link .arrow{transition:background-color 180ms ease,border-color 180ms ease}
+@media(hover:hover) and (pointer:fine){body[data-page="cases"] .project-card:hover{transform:translateY(-5px)}.gallery-page .sample-link:hover .art{transform:translateY(-5px);box-shadow:0 6px 18px rgba(6,34,81,.06)}}
+body[data-page="cases"] .project-card:focus-within{border-color:#8c9eb9;box-shadow:0 6px 18px rgba(6,34,81,.06)}
+.gallery-page .sample-link:focus-visible .arrow{background:var(--accent);border-color:var(--accent)}
+body[data-page="cases"] .project-card:focus-within,.gallery-page .sample:focus-within{animation:none;translate:none}
+@media(prefers-reduced-motion:reduce){body[data-page="cases"] .project-card,.gallery-page .sample,.gallery-page .sample-link .art,.gallery-page .sample-link .arrow{animation:none!important;transition:none!important;transform:none!important;translate:none!important}}
