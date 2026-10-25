@@ -117,13 +117,19 @@ body.gallery-page{font-family:var(--body);--navy:var(--ink);--muted:#475569;--li
 .gallery-page #sample-detail .detail-summary,
 .gallery-page #sample-detail .detail-artefact,
 .gallery-page #sample-detail .detail-outcome{border:0}
-</style></head>
+
+/* Match portfolio heading treatment; remove leftover overview dividers. */
+.gallery-page #gallery-title,.gallery-page #gallery-title em{color:#062251}
+.gallery-page #gallery-title em{font-style:italic}
+.gallery-page #gallery-overview>.hero,.gallery-page #gallery,.gallery-page #gallery .section-top{border:0;box-shadow:none}
+</style><link rel="stylesheet" href="assets/card-motion-preview.css?v=2">
+</head>
 <body class="gallery-page" data-page="gallery">
 <a class="skip" href="#main">Skip to gallery</a>
 <div class="preview-bar">Local preview · 6 work examples · draft write-ups</div>
 <aside class="rail" aria-label="Site navigation"><div class="header-inner"><a class="identity" href="index.html#top" aria-label="Salman Abdul Ghaffar, home"><span class="identity-name">Salman Abdul Ghaffar</span></a><nav aria-label="Main navigation"><a href="index.html#work" >Selected work</a><a href="index.html#approach" >Leadership</a><a href="index.html#changelog">Experience</a><a href="gallery-preview.html" aria-current="page">Work gallery</a><a href="specs.html" >Capabilities</a></nav><a class="header-contact" href="index.html#contact">Contact me <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3 7 9 6 9-6"/></svg></a><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button></div><nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" hidden><a href="index.html#work">Selected work</a><a href="index.html#approach" >Leadership</a><a href="index.html#changelog">Experience</a><a href="gallery-preview.html" aria-current="page">Work gallery</a><a href="specs.html">Capabilities</a><a href="index.html#contact">Contact</a></nav></aside>
 <main id="main">
-<div id="gallery-overview"><section class="wrap hero"><div><h1 id="gallery-title" tabindex="-1">Work samples</h1></div><p class="hero-description">Research, service design and product decisions.</p></section>
+<div id="gallery-overview"><section class="wrap hero"><div><h1 id="gallery-title" tabindex="-1">Work <em>samples</em></h1></div><p class="hero-description">Research, service design and product decisions.</p></section>
 <section id="gallery" class="wrap gallery-section" aria-label="Work sample gallery"><div class="section-top"><div class="filters" aria-label="Filter sample categories"><button class="filter" data-filter="all" aria-pressed="true">All samples</button><button class="filter" data-filter="Discovery" aria-pressed="false">Discovery</button><button class="filter" data-filter="Strategy" aria-pressed="false">Strategy</button></div><p id="result-count" role="status">6 samples</p></div><div class="gallery-grid" id="sample-grid"></div></section><section class="coming-soon wrap" aria-labelledby="coming-title"><div class="building-scene"><svg id="brick-scene" viewBox="0 0 320 170" aria-hidden="true" focusable="false"><path d="M32 153H294" stroke="#dfe5ed" stroke-width="1.5" stroke-linecap="round"/><g fill="#e9f2f5" stroke="#062251" stroke-opacity=".6" stroke-width="1.2"><rect x="170" y="134" width="36" height="17" rx="2"/><rect x="208" y="134" width="36" height="17" rx="2"/><rect x="246" y="134" width="36" height="17" rx="2"/><rect x="188" y="115" width="36" height="17" rx="2"/><rect x="226" y="115" width="36" height="17" rx="2"/></g><g id="new-bricks" fill="#a9dbc3" stroke="#062251" stroke-opacity=".6" stroke-width="1.2"><rect x="188" y="96" width="36" height="17" rx="2"/><rect x="226" y="96" width="36" height="17" rx="2"/><rect x="208" y="77" width="36" height="17" rx="2"/></g><g id="builder-rig" stroke="#062251" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M69 103L61 147H73M84 103L93 147H104" fill="none"/><path d="M65 73Q76 67 86 75L91 104H63Z" fill="#b8d8eb"/><path d="M75 65V71"/><circle cx="75" cy="54" r="12" fill="#fff" stroke-width="2"/><path d="M62 51Q62 36 75 36Q88 36 88 51Z" fill="#00e676" stroke-width="1.6"/><path d="M59 51H92M75 38V47" stroke-width="1.6"/><circle cx="81" cy="55" r="1" fill="#062251" stroke="none"/><g id="builder-arm"><path d="M84 78L100 88L115 87" fill="none"/><path d="M66 78L77 91L100 95" fill="none"/></g></g><rect id="moving-brick" x="0" y="0" width="36" height="17" rx="2" fill="#ffc563" stroke="#062251" stroke-opacity=".6" stroke-width="1.2" visibility="hidden"/></svg></div><div class="coming-copy"><h2 id="coming-title">More coming soon<span class="coming-dot">.</span></h2></div></section></div>
 <section id="sample-detail" class="wrap sample-detail" aria-labelledby="detail-title" hidden>
 <a href="gallery-preview.html" class="gallery-back" data-back>← Back to work samples</a>
@@ -281,7 +287,7 @@ if('scrollRestoration' in history)history.scrollRestoration='manual';
 let activeArtefactSample=null;
 function chooseArtefact(index){
  const sample=activeArtefactSample,view=sample.views?.[index]||{title:sample.title,image:sample.image,caption:''};
- 
+
  document.getElementById('artefact-caption').textContent=view.caption;
  document.getElementById('artefact-views').querySelectorAll('button').forEach((button,i)=>button.setAttribute('aria-pressed',String(i===index)));
  setupImageViewer({...sample,title:sample.title+' — '+view.title,image:view.image});
@@ -349,4 +355,4 @@ function playBuilding(){if(reduceBuildingMotion.matches||document.hidden||!build
 finishBuilding();reduceBuildingMotion.addEventListener('change',finishBuilding);document.addEventListener('visibilitychange',()=>{if(document.hidden)finishBuilding()});
 if('IntersectionObserver' in window){const buildingObserver=new IntersectionObserver(entries=>{buildingVisible=entries[0].isIntersecting;if(buildingVisible&&!buildingPlayed)playBuilding();else if(!buildingVisible)finishBuilding()},{threshold:.35});buildingObserver.observe(building)}
 
-</script></body></html>
+</script><script src="assets/card-motion-preview.js?v=2"></script></body></html>
