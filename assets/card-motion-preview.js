@@ -1,6 +1,6 @@
 /* Local preview only. Cards remain visible without JavaScript or observers. */
 (()=>{
- const cards=[...document.querySelectorAll('body[data-page="cases"] .project-card, .gallery-page .gallery-grid .sample')];
+ const cards=[...document.querySelectorAll('body[data-page="cases"] .project-card, .gallery-page .gallery-grid .sample, body[data-page="articles"] .article-entry')];
  const preference=window.matchMedia?.('(prefers-reduced-motion: reduce)');
  if(!cards.length||preference?.matches||!('IntersectionObserver' in window))return;
  let observer;const seen=new WeakSet();

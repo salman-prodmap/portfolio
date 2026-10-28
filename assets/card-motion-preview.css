@@ -9,3 +9,5 @@ body[data-page="cases"] .project-card:focus-within{border-color:#8c9eb9;box-shad
 .gallery-page .sample-link:focus-visible .arrow{background:var(--accent);border-color:var(--accent)}
 body[data-page="cases"] .project-card:focus-within,.gallery-page .sample:focus-within{animation:none;translate:none}
 @media(prefers-reduced-motion:reduce){body[data-page="cases"] .project-card,.gallery-page .sample,.gallery-page .sample-link .art,.gallery-page .sample-link .arrow{animation:none!important;transition:none!important;transform:none!important;translate:none!important}}
+
+body[data-page="articles"] .article-entry.card-motion-enter{animation:portfolio-card-arrive 650ms cubic-bezier(.22,.7,.2,1) var(--card-motion-delay,0ms) both}body[data-page="articles"] .article-entry:focus-within{animation:none;translate:none}@media(prefers-reduced-motion:reduce){body[data-page="articles"] .article-entry{animation:none!important;translate:none!important}}
