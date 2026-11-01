@@ -733,8 +733,8 @@ window.SITE = {
       ],
       "summary": "I led product ownership across three teams on the modernisation of OLCS, Ireland’s national platform for school staff appointments, leave and substitute claims.",
       "metric": [
-        "1,000+",
-        "hours saved per month"
+        "~400,000",
+        "hours saved annually"
       ],
       "layout": "v2",
       "label": "Case study · Government",
@@ -745,8 +745,8 @@ window.SITE = {
           "story points per sprint"
         ],
         [
-          "1,000+",
-          "hours saved per month"
+          "~400,000",
+          "hours saved annually"
         ]
       ],
       "facts": [
@@ -795,7 +795,7 @@ window.SITE = {
         {
           "h": "Context",
           "p": [
-            "I led product ownership across three teams on the modernisation of OLCS, Ireland’s national platform for school staff appointments, leave and substitute claims. Serving 90,000+ teachers, approximately 4,000 schools and 20,000+ school users, the platform supports workflows that feed directly into payroll.",
+            "I led product ownership across three teams on the modernisation of OLCS, Ireland’s national platform for school staff appointments, leave and substitute claims. Serving 90,000+ teachers, approximately 4,000 primary and post-primary schools and 20,000+ school users, the platform supports workflows that feed directly into payroll.",
             "OLCS 2.0 was a risk-driven rebuild of a business-critical public-sector system, not a feature project.",
             "The scale explains the stakes. The system held 7.6 million claims, 1.4 million leave records, 403,000 appointments and 181,000 staff records. All of it flows into teacher and SNA payroll. An error here isn’t a UI bug. It’s someone paid the wrong amount.",
             "Working with Department of Education stakeholders and delivery partners, I translated undocumented business logic into clear requirements, strengthened delivery practices and simplified operational workflows. The programme went live in February 2026."
@@ -825,9 +825,9 @@ window.SITE = {
           "h": "Key improvements",
           "p": [
             "In total I identified and delivered 22 improvements over the legacy system, from input constraints that stop records being rejected downstream to screens that only ask what’s relevant and actions named by their outcome. Together they cut rework for schools, made delivery smoother across the programme and built the Department’s confidence in the new platform.",
-            "<p><b>Orphaned claims, solved without changing business logic.</b> A new idea: a visual display of the leave timeline and the claims available to attach, rather than manually attaching a single claim each time. It eliminated the risk of claims becoming orphaned, and contributed to the 1,000+ hours saved per month.</p>",
-            "<table class=\"cs-table\"><thead><tr><th>Top 5 improvements</th><th>Est. hours saved a month</th></tr></thead><tbody><tr><td>Orphaned claims redesign (visual leave timeline, attach multiple claims at once)</td><td>~260</td></tr><tr><td>Faster search: paging and sorting</td><td>~145</td></tr><tr><td>Smart buttons that prevent input errors</td><td>~140</td></tr><tr><td>Multiple appointments in the same week</td><td>~120</td></tr><tr><td>Business rules documented for 3 modules</td><td>~120</td></tr></tbody></table>",
-            "<p class=\"cs-note\">Estimated split of the measured 1,000+ hours a month saved for schools and the Department, based on system volumes.</p>"
+            "<p><b>Orphaned claims, solved without changing business logic.</b> A new idea: a visual display of the leave timeline and the claims available to attach, rather than manually attaching a single claim each time. It eliminated the risk of claims becoming orphaned, and reduced manual work for schools.</p>",
+            "<table class=\"cs-table\"><thead><tr><th>Annual time saving</th><th>Basis</th></tr></thead><tbody><tr><td>Approximately 395,100 hours across schools</td><td>100 hours per school × 3,951 primary and post-primary schools</td></tr><tr><td>1,000 hours within the OLCS team</td><td>Additional annual team saving</td></tr><tr><td>Around 400,000 hours combined</td><td>396,100 hours annually, rounded</td></tr></tbody></table>",
+            "<p class=\"cs-note\">Calculated using 100 hours saved per school annually and the Department of Education’s Education Plan 2025 counts: 3,229 primary and 722 post-primary schools. The OLCS team saving is an additional 1,000 hours per year. <a href=\"https://nabmse.ie/images/education_plan_2025-dey.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">School-count source ↗</a></p>"
           ]
         },
         {
@@ -837,7 +837,7 @@ window.SITE = {
         {
           "h": "Results and leadership impact",
           "p": [
-            "Delivery velocity increased from approximately 5 to 30 story points per sprint. Improvements across the delivered modules generated measured savings of over 1,000 operational hours per month.",
+            "Delivery velocity increased from approximately 5 to 30 story points per sprint. At 100 hours saved per school annually across approximately 4,000 schools, the improvements represent around 400,000 hours of annual time savings, including an additional 1,000 hours saved within the OLCS team.",
             "<ul class=\"cs-list\"><li>80% fewer defects than the parallel team.</li><li>Over half of claim-limit rules were unenforced in the legacy system; all are enforced in OLCS 2.0.</li><li>Led sprint reviews across 3 teams.</li><li>Led UAT across multiple teams.</li><li>Led complex integration of file transfers between payroll and leave system.</li><li>Four major modules delivered: Post-Primary Claims (DR scope), Orphaned Claims, Staff Management, most of the Family Leave catalogue.</li><li>Usability validated by schools in in-person demos.</li><li>Scope grew from one team to three, and my contract was extended several times on measurable impact.</li></ul>",
             "The engagement demonstrates how I combine technical analysis with product judgment: turning complex policy into buildable requirements, aligning senior stakeholders and leading teams towards measurable service improvements."
           ]
@@ -1091,7 +1091,7 @@ window.SITE = {
         "Embedded GDPR-by-design controls (RBAC, auditability, data minimisation, encryption safeguards) into requirements; strengthened compliance for high-risk data.",
         "Entrusted with 2 additional teams. Contract extended multiple times based on measurable impact.",
         "Conceived and piloted Generative AI early-warning system to flag high-risk leave submissions; reduced claim rejection rates by ~50%, preventing payroll disruption and operational failure.",
-        "Re-engineered multiple fragile legacy workflows and unlocked 1,000+ operational hours a month in savings across the programme while preserving core database integrity.",
+        "Re-engineered multiple fragile legacy workflows and enabled around 400,000 hours of annual time savings across schools and the OLCS team while preserving core database integrity.",
         "Technology & tools: Azure cloud, MFA, SSO, MUI, Figma, Visio, GitHub."
       ],
       "endClient": "Department of Education, Ireland",
