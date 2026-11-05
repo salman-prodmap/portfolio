@@ -643,7 +643,7 @@ window.portfolioHome = function(S) {
   }
 
   function casePageV2(c, next) {
-    const editorialClass = {'reward-gmm':'gmm-case',olcs:'doe-case','liberty-equine':'liberty-case','service-hive':'hive-case','hr-coc':'coc-case'}[c.id];
+    const editorialClass = {'reward-gmm':'gmm-case',olcs:'doe-case','liberty-equine':'liberty-case','service-hive':'hive-case','hr-coc':'coc-case','copyrite-genuscan':'genuscan-case'}[c.id];
     const caseClass = editorialClass ? `${editorialClass} editorial-case` : '';
     const blockText = b => [].concat(b.p).map(t => t.trim().startsWith('<') ? t : `<p>${t}</p>`).join('');
     const isLong = b => [].concat(b.p).join(' ').replace(/<[^>]+>/g, '').length > 520 || [].concat(b.p).some(t => /<(ol|ul)\b/.test(t));
@@ -699,7 +699,7 @@ window.portfolioHome = function(S) {
     <section class="cs2-story-sec ${caseClass}">
       <div class="wrap">
         <div class="cs2-story-head">
-          <h2>${c.id === 'reward-gmm' ? 'From concept to global platform' : c.id === 'olcs' ? 'From complex policy to a clearer service' : c.id === 'liberty-equine' ? 'From manual underwriting to a broker product' : c.id === 'service-hive' ? 'From fragmented support to global servicing' : c.id === 'hr-coc' ? 'From manual tracking to intelligent automation' : 'The full story'}</h2>
+          <h2>${c.id === 'reward-gmm' ? 'From concept to global platform' : c.id === 'olcs' ? 'From complex policy to a clearer service' : c.id === 'liberty-equine' ? 'From manual underwriting to a broker product' : c.id === 'service-hive' ? 'From fragmented support to global servicing' : c.id === 'hr-coc' ? 'From manual tracking to intelligent automation' : c.id === 'copyrite-genuscan' ? 'From an idea to customer rollout' : 'The full story'}</h2>
           ${!editorialClass?`<button type="button" class="cs2-toggle" aria-expanded="true" aria-controls="cs2-story">
             <span class="lbl-more">Read the full story</span><span class="lbl-less">Hide the full story</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
