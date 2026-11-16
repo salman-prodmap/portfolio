@@ -728,8 +728,7 @@ window.SITE = {
       "tags": [
         "Government",
         "Legacy modernisation",
-        "Payroll",
-        "GenAI"
+        "Payroll"
       ],
       "summary": "I led product ownership across three teams on the modernisation of OLCS, Ireland’s national platform for school staff appointments, leave and substitute claims.",
       "metric": [
@@ -750,10 +749,6 @@ window.SITE = {
         ]
       ],
       "facts": [
-        [
-          "~50%",
-          "fewer claim rejections"
-        ],
         [
           "80%",
           "fewer defects than the parallel team"
@@ -785,7 +780,6 @@ window.SITE = {
         "Improved delivery flow and executive decision-making": "people",
         "Simplified workflows and strengthened payroll accuracy": "shield",
         "Key improvements": "plus",
-        "Applied AI to prevent avoidable errors": "bolt",
         "Results and leadership impact": "chart",
         "Strategic insights": "compass",
         "Lessons learned": "star"
@@ -831,10 +825,6 @@ window.SITE = {
           ]
         },
         {
-          "h": "Applied AI to prevent avoidable errors",
-          "p": "I shaped two AI initiatives that subsequently went live. The first used offline AI to map error messages to government circulars, with business and policy validation, so schools received clearer explanations. The second provided optional guidance during claim entry to flag potential conflicts across leave records. The early-warning pilot reduced claim rejections by approximately 50%."
-        },
-        {
           "h": "Results and leadership impact",
           "p": [
             "Delivery velocity increased from approximately 5 to 30 story points per sprint. At 100 hours saved per school annually across approximately 4,000 schools, the improvements represent around 400,000 hours of annual time savings, including an additional 1,000 hours saved within the OLCS team.",
@@ -844,7 +834,7 @@ window.SITE = {
         },
         {
           "h": "Strategic insights",
-          "p": "<ul class=\"cs-list\"><li><b>In legacy modernisation, the requirement is the risk.</b> OLCS 2.0 went RED because of discovery, not code. When business logic is undocumented, analysis capacity sets delivery speed. Plan and staff it as a critical-path function, not as support to development.</li><li><b>“Like-for-like” is a trap.</b> Legacy behaviour is evidence, not a specification. The claim-limit tests showed that faithfully copying OLCS 1 would have carried payroll errors into a brand-new platform. The right target is legacy behaviour, tested and then ratified by the business.</li><li><b>Visibility earns trust.</b> One consistent voice for the team at fortnightly reviews, and demos of working software, kept Department stakeholders close to the detail. Positive feedback from five in-person school demos on navigation and usability then validated the design choices from outside the programme.</li><li><b>AI earns its place at the point of risk.</b> In a regulated system, the best first use of Generative AI was not a chatbot. It was an early-warning check where errors are most expensive: leave submissions about to hit payroll.</li></ul>"
+          "p": "<ul class=\"cs-list\"><li><b>In legacy modernisation, the requirement is the risk.</b> OLCS 2.0 went RED because of discovery, not code. When business logic is undocumented, analysis capacity sets delivery speed. Plan and staff it as a critical-path function, not as support to development.</li><li><b>“Like-for-like” is a trap.</b> Legacy behaviour is evidence, not a specification. The claim-limit tests showed that faithfully copying OLCS 1 would have carried payroll errors into a brand-new platform. The right target is legacy behaviour, tested and then ratified by the business.</li><li><b>Visibility earns trust.</b> One consistent voice for the team at fortnightly reviews, and demos of working software, kept Department stakeholders close to the detail. Positive feedback from five in-person school demos on navigation and usability then validated the design choices from outside the programme.</li></ul>"
         },
         {
           "h": "Lessons learned",
@@ -1090,7 +1080,6 @@ window.SITE = {
         "Leveraged flow metrics to influence senior EY and Ministry leadership; secured programme transition from Scrum to Kanban, improving predictability and cycle-time.",
         "Embedded GDPR-by-design controls (RBAC, auditability, data minimisation, encryption safeguards) into requirements; strengthened compliance for high-risk data.",
         "Entrusted with 2 additional teams. Contract extended multiple times based on measurable impact.",
-        "Conceived and piloted Generative AI early-warning system to flag high-risk leave submissions; reduced claim rejection rates by ~50%, preventing payroll disruption and operational failure.",
         "Re-engineered multiple fragile legacy workflows and enabled around 400,000 hours of annual time savings across schools and the OLCS team while preserving core database integrity.",
         "Technology & tools: Azure cloud, MFA, SSO, MUI, Figma, Visio, GitHub."
       ],
